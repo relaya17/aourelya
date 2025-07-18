@@ -1,0 +1,62 @@
+
+{
+  "header": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hello, I'm",
+    "name": "arlet",
+    "role": "Full Stack Developer",
+    "description": "I build beautiful, responsive, and user-friendly web applications using modern technologies.",
+    "cta": "Get In Touch"
+  },
+  "about": {
+    "title": "About Me",
+    "content": "I'm a passionate web developer with 5+ years of experience in creating modern web applications. I focus on writing clean, efficient, and maintainable code. When I'm not coding, you can find me exploring new technologies, contributing to open source projects, or enjoying outdoor activities.",
+    "downloadResume": "Download CV"
+  },
+  "skills": {
+    "title": "My Skills",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "databases": "Databases",
+    "tools": "Tools & Others"
+  },
+  "projects": {
+    "title": "My Projects",
+    "viewProject": "View Project",
+    "viewCode": "View Code",
+    "project1": {
+      "title": "E-commerce Platform",
+      "description": "A full-stack e-commerce solution with payment integration, user authentication, and admin dashboard."
+    },
+    "project2": {
+      "title": "Task Management App",
+      "description": "A responsive task management application with drag-and-drop functionality and real-time updates."
+    },
+    "project3": {
+      "title": "Portfolio Website",
+      "description": "A customizable portfolio template for developers to showcase their work and skills."
+    }
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "nameLabel": "Your Name",
+    "emailLabel": "Your Email",
+    "messageLabel": "Your Message",
+    "submitButton": "Send Message",
+    "successMessage": "Your message has been sent successfully!",
+    "errorMessage": "Failed to send message. Please try again."
+  },
+  "footer": {
+    "rights": "All Rights Reserved",
+    "madeWith": "Made with ❤️ using React"
+  },
+  "direction": "ltr",
+  "language": "English",
+  "languageSwitch": "עברית"
+}

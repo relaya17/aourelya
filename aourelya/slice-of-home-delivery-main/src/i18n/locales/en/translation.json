@@ -5,19 +5,22 @@
     "about": "About",
     "skills": "Skills",
     "projects": "Projects",
-    "contact": "Contact"
+    "contact": "Contact",
+    "blog": "Blog",
+    "booking": "Book Appointment",
+    "services": "Services"
   },
   "hero": {
     "greeting": "Hello, I'm",
-    "name": "arlet",
-    "role": "Full Stack Developer",
-    "description": "I build beautiful, responsive, and user-friendly web applications using modern technologies.",
+    "name": "Aurelia",
+    "role": "Advanced Full Stack Developer",
+    "description": "Experienced web developer with deep expertise in JavaScript, React, TypeScript, and Node.js. I specialize in creating smart, responsive, and custom web systems with focus on optimal user experience and SEO optimization.",
     "cta": "Get In Touch"
   },
   "about": {
     "title": "About Me",
-    "content": "I'm a passionate web developer with 5+ years of experience in creating modern web applications. I focus on writing clean, efficient, and maintainable code. When I'm not coding, you can find me exploring new technologies, contributing to open source projects, or enjoying outdoor activities.",
-    "downloadResume": "Download CV"
+    "content": "As an experienced web developer with deep expertise in JavaScript (ES6+) and the leading technology stack of React, TypeScript, Node.js, Express, and MongoDB (MERN Stack), I specialize in creating smart, responsive, and custom web systems and websites. I combine strong development capabilities with deep understanding of user experience (UX/UI) and search engine optimization (SEO) to deliver comprehensive and leading digital solutions.\n\nProven Expertise:\n• Advanced Full-Stack Development: Building robust architectures and seamless integration between frontend and backend\n• React & TypeScript: Creating dynamic and intuitive user interfaces with secure and maintainable code\n• Node.js & Express & MongoDB: Developing strong and secure API servers\n• WordPress Customization: Developing custom templates and plugins\n\nI am committed to delivering digital solutions that generate real business value, while maintaining technological excellence, efficiency, and reliability.",
+    "bookAppointment": "Book Appointment"
   },
   "skills": {
     "title": "My Skills",

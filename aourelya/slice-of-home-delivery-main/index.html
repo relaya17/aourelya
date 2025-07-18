@@ -1,99 +1,106 @@
 <!DOCTYPE html>
 <html lang="he">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aurelia Web Solutions | בניית אתרים ושיווק דיגיטלי</title>
-    <link rel="stylesheet" href="index.css" />
 
-    <meta name="description" content="Aurelia Web Solutions - בניית אתרים מתקדמת, עיצוב ייחודי ושיווק דיגיטלי שמוביל להצלחה." />
-    <meta name="author" content="Aurelia Web Solutions" />
-    <meta name="keywords" content="בניית אתרים, שיווק דיגיטלי, פיתוח אתרים, עיצוב אתרים, חנות אינטרנטית, קידום בגוגל, קידום עסקים באינטרנט, פתרונות דיגיטליים" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aurelia Web Solutions | בניית אתרים ושיווק דיגיטלי</title>
+  <link rel="stylesheet" href="index.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;700&display=swap" rel="stylesheet">
 
-    <meta property="og:title" content="Aurelia Web Solutions | פתרונות דיגיטליים מתקדמים" />
-    <meta property="og:description" content="Aurelia Web Solutions - שירותי בניית אתרים, עיצוב אתרים ושיווק דיגיטלי לעסקים שרוצים לבלוט ולהצליח." />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="/your-logo-or-banner.png" /> 
+  <meta name="description"
+    content="Aurelia Web Solutions - בניית אתרים מתקדמת, עיצוב ייחודי ושיווק דיגיטלי שמוביל להצלחה." />
+  <meta name="author" content="Aurelia Web Solutions" />
+  <meta name="keywords"
+    content="בניית אתרים, שיווק דיגיטלי, פיתוח אתרים, עיצוב אתרים, חנות אינטרנטית, קידום בגוגל, קידום עסקים באינטרנט, פתרונות דיגיטליים" />
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@aurelia_web" />
-    <meta name="twitter:title" content="Aurelia Web Solutions - בונים אתרים שמביאים תוצאות" />
-    <meta name="twitter:description" content="בניית אתרים איכותית ושיווק דיגיטלי חכם לעסק שלך. הצטרפו להצלחה עם Aurelia Web Solutions." />
-    <meta name="twitter:image" content="/your-logo-or-banner.png" />
-  </head>
+  <meta property="og:title" content="Aurelia Web Solutions | פתרונות דיגיטליים מתקדמים" />
+  <meta property="og:description"
+    content="Aurelia Web Solutions - שירותי בניית אתרים, עיצוב אתרים ושיווק דיגיטלי לעסקים שרוצים לבלוט ולהצליח." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/your-logo-or-banner.png" />
 
-  <body>
-    <div id="root"></div>
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@aurelia_web" />
+  <meta name="twitter:title" content="Aurelia Web Solutions - בונים אתרים שמביאים תוצאות" />
+  <meta name="twitter:description"
+    content="בניית אתרים איכותית ושיווק דיגיטלי חכם לעסק שלך. הצטרפו להצלחה עם Aurelia Web Solutions." />
+  <meta name="twitter:image" content="/your-logo-or-banner.png" />
+</head>
 
-    <!-- כפתור להציג את הגדרות הנגישות -->
-<!-- כפתור הגדרות נגישות עם אימוג'י -->
-<!-- כפתור הגדרות נגישות עם אימוג'י נגישות -->
-<button id="accessibility-btn">♿</button>
+<body>
+  <div id="root"></div>
 
-    <!-- הגדרות נגישות -->
-    <div id="accessibility-options" style="display: none;">
-      <h3>הגדרות נגישות</h3>
-      <!-- שינוי גודל טקסט -->
-      <label for="font-size">גודל טקסט:</label>
-      <input type="range" id="font-size" min="12" max="24" value="16">
-      
-      <!-- שינוי ניגודיות -->
-      <label for="high-contrast">ניגודיות גבוהה:</label>
-      <input type="checkbox" id="high-contrast">
+  <!-- כפתור להציג את הגדרות הנגישות -->
+  <!-- כפתור הגדרות נגישות עם אימוג'י -->
+  <!-- כפתור הגדרות נגישות עם אימוג'י נגישות -->
+  <button id="accessibility-btn">♿</button>
 
-      <!-- כפתור להחלת הגדרות -->
-      <button id="apply-settings">הפעל הגדרות</button>
-    </div>
+  <!-- הגדרות נגישות -->
+  <div id="accessibility-options" style="display: none;">
+    <h3>הגדרות נגישות</h3>
+    <!-- שינוי גודל טקסט -->
+    <label for="font-size">גודל טקסט:</label>
+    <input type="range" id="font-size" min="12" max="24" value="16">
 
-    <script>
+    <!-- שינוי ניגודיות -->
+    <label for="high-contrast">ניגודיות גבוהה:</label>
+    <input type="checkbox" id="high-contrast">
+
+    <!-- כפתור להחלת הגדרות -->
+    <button id="apply-settings">הפעל הגדרות</button>
+  </div>
+
+  <script>
     // הצגת/הסתרת הגדרות נגישות
-document.getElementById('accessibility-btn').addEventListener('click', function() {
-  const options = document.getElementById('accessibility-options');
-  options.style.display = options.style.display === 'block' ? 'none' : 'block';
-});
+    document.getElementById('accessibility-btn').addEventListener('click', function () {
+      const options = document.getElementById('accessibility-options');
+      options.style.display = options.style.display === 'block' ? 'none' : 'block';
+    });
 
-// הפעלת הגדרות נגישות ושמירה ב-localStorage
-function applyAccessibilitySettings() {
-  // שינוי גודל טקסט
-  const fontSize = document.getElementById('font-size').value;
-  document.body.style.fontSize = `${fontSize}px`;
-  localStorage.setItem('fontSize', fontSize);
+    // הפעלת הגדרות נגישות ושמירה ב-localStorage
+    function applyAccessibilitySettings() {
+      // שינוי גודל טקסט
+      const fontSize = document.getElementById('font-size').value;
+      document.body.style.fontSize = `${fontSize}px`;
+      localStorage.setItem('fontSize', fontSize);
 
-  // שינוי ניגודיות
-  const highContrast = document.getElementById('high-contrast').checked;
-  if (highContrast) {
-    document.body.style.backgroundColor = '#000';
-    document.body.style.color = '#FFF';
-    localStorage.setItem('highContrast', 'true');
-  } else {
-    document.body.style.backgroundColor = '';
-    document.body.style.color = '';
-    localStorage.setItem('highContrast', 'false');
-  }
-}
+      // שינוי ניגודיות
+      const highContrast = document.getElementById('high-contrast').checked;
+      if (highContrast) {
+        document.body.style.backgroundColor = '#000';
+        document.body.style.color = '#FFF';
+        localStorage.setItem('highContrast', 'true');
+      } else {
+        document.body.style.backgroundColor = '';
+        document.body.style.color = '';
+        localStorage.setItem('highContrast', 'false');
+      }
+    }
 
-// חיבור לפונקציה כאשר הכפתור נלחץ
-document.getElementById('apply-settings').addEventListener('click', applyAccessibilitySettings);
+    // חיבור לפונקציה כאשר הכפתור נלחץ
+    document.getElementById('apply-settings').addEventListener('click', applyAccessibilitySettings);
 
-// טוען את הגדרות הנגישות בעת טעינת הדף
-window.addEventListener('load', function() {
-  const savedFontSize = localStorage.getItem('fontSize');
-  const savedHighContrast = localStorage.getItem('highContrast');
+    // טוען את הגדרות הנגישות בעת טעינת הדף
+    window.addEventListener('load', function () {
+      const savedFontSize = localStorage.getItem('fontSize');
+      const savedHighContrast = localStorage.getItem('highContrast');
 
-  if (savedFontSize) {
-    document.body.style.fontSize = `${savedFontSize}px`;
-  }
+      if (savedFontSize) {
+        document.body.style.fontSize = `${savedFontSize}px`;
+      }
 
-  if (savedHighContrast === 'true') {
-    document.body.style.backgroundColor = '#000';
-    document.body.style.color = '#FFF';
-  }
-});
+      if (savedHighContrast === 'true') {
+        document.body.style.backgroundColor = '#000';
+        document.body.style.color = '#FFF';
+      }
+    });
 
-    </script>
-    
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
-    <script type="module" src="/src/main.tsx"></script>
-    
-  </body>
+  </script>
+
+  <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
+  <script type="module" src="/src/main.tsx"></script>
+
+</body>
+
 </html>

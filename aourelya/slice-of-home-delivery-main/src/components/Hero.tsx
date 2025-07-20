@@ -40,29 +40,24 @@ const Hero = () => {
                 {t('hero.name')}
               </h1>
 
-              {/* Card Image with border, shadow & hover animation */}
-              <motion.img
-                src={t('hero.cardImageSrc')}
-                alt={t('hero.cardImageAlt')}
-                loading="lazy"
-                decoding="async"
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                whileHover={{ scale: 1.02 }}
-                className="w-full h-auto rounded-md mx-auto mb-6 border-2 border-primary/30 p-1 shadow-md transition-transform"
+              {/* תמונה של ארלט */}
+              <img
+                src="/arlet.png"
+                alt="ארלט"
+                className="w-40 h-40 rounded-full mx-auto mb-6 border-4 border-primary object-cover shadow-lg"
+                style={{ objectPosition: 'center 20%' }}
               />
 
               {/* Role & Description */}
               <h2 className="text-2xl md:text-3xl font-semibold text-muted-foreground mb-6 text-center">
-                {t('hero.role')}
+                מפתחת מערכות חכמות מבוססות טכנולוגיה מתקדמת  פול סטאק ובינה מלאכותית
               </h2>
               <p className="text-lg text-muted-foreground mb-8 max-w-md mx-auto text-center">
                 {t('hero.description')}
               </p>
 
               {/* CTA Buttons */}
-              <div className="flex space-x-4 justify-center">
+              <div className="flex space-x-4 rtl:space-x-reverse justify-center">
                 <motion.a
                   href="#contact"
                   role="button"
@@ -89,24 +84,8 @@ const Hero = () => {
             </div>
           </motion.div>
 
-          {/* Developer Portrait */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="md:w-2/5"
-          >
-            <div className="relative">
-              <div className="absolute inset-0 bg-primary/20 rounded-full blur-3xl"></div>
-              <img
-                src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b"
-                alt={t('hero.altDeveloperPortrait')}
-                loading="lazy"
-                decoding="async"
-                className="w-full h-auto rounded-xl relative z-10 object-cover"
-              />
-            </div>
-          </motion.div>
+          {/* תמונה של ארלט - גדולה, ריבועית, בצד */}
+          {/* תמונה זו הוסרה לחלוטין */}
 
         </div>
       </div>

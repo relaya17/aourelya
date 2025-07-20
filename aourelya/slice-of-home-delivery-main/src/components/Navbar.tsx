@@ -52,7 +52,7 @@ const Navbar = () => {
           
           {/* Desktop Navigation */}
           <div className="hidden md:block">
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-4 rtl:space-x-reverse">
               {navItems.map((item) => (
                 <a
                   key={item.key}
@@ -65,7 +65,7 @@ const Navbar = () => {
               
               <button
                 onClick={toggleLanguage}
-                className="ml-4 bg-primary text-primary-foreground px-3 py-1 rounded-md text-sm font-medium transition-colors hover:bg-primary/90"
+                className="ms-4 bg-primary text-primary-foreground px-3 py-1 rounded-md text-sm font-medium transition-colors hover:bg-primary/90"
               >
                 {t('languageSwitch')}
               </button>
@@ -76,7 +76,7 @@ const Navbar = () => {
           <div className="md:hidden flex items-center">
             <button
               onClick={toggleLanguage}
-              className="mr-2 text-foreground hover:text-primary"
+              className="me-2 text-foreground hover:text-primary"
             >
               {t('languageSwitch')}
             </button>

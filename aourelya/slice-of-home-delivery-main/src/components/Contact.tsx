@@ -50,98 +50,64 @@ const Contact = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">{t('contact.title')}</h2>
-          <div className="w-24 h-1 bg-primary mx-auto"></div>
+          <div className="mb-8 border-b-2 border-primary pb-2 text-right">
+            <h2 className="text-4xl md:text-5xl font-extrabold text-blue-700 bg-blue-50 px-8 py-4 rounded-2xl border-b-4 border-blue-300 inline-block mb-4 font-serif flex items-center justify-center gap-2">
+              <Mail className="h-7 w-7 text-blue-700" />
+              {t('contact.title')}
+            </h2>
+          </div>
         </motion.div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Contact Information */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="flex flex-col justify-center"
-          >
-            <div className="mb-8">
-              <h3 className="text-xl font-semibold mb-4">Get in touch</h3>
-              <p className="text-muted-foreground mb-6">
-                Feel free to reach out if you're looking for a developer, have a question, 
-                or just want to connect.
-              </p>
-              
-              <div className="space-y-4">
-                <div className="flex items-center space-x-3">
-                  <Mail className="h-5 w-5 text-primary" />
-                  <span></span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <Phone className="h-5 w-5 text-primary" />
-                  <span>0528747305</span>
-                </div>
-              </div>
-            </div>
-          </motion.div>
+          {/* מידע נוסף הוסר, הכל עבר לכותרת למעלה */}
           
           {/* Contact Form */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 30 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="bg-white shadow-md rounded-lg p-8 w-full max-w-md mx-auto md:mx-0"
           >
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium mb-1">
-                  {t('contact.nameLabel')}
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={form.name}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-2 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
-                />
-              </div>
-              
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium mb-1">
-                  {t('contact.emailLabel')}
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={form.email}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-2 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
-                />
-              </div>
-              
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium mb-1">
-                  {t('contact.messageLabel')}
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={form.message}
-                  onChange={handleChange}
-                  required
-                  rows={5}
-                  className="w-full px-4 py-2 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
-                />
-              </div>
-              
+            {/* הסרתי את כותרת המשנה, נשארת רק כותרת ראשית */}
+            <form onSubmit={handleSubmit} className="space-y-6 text-right">
+              <label className="block mb-1 font-semibold text-right" htmlFor="name">שם מלא</label>
+              <input
+                type="text"
+                name="name"
+                id="name"
+                placeholder="שם מלא"
+                value={form.name}
+                onChange={handleChange}
+                className="w-full p-3 border border-gray-400 rounded-md bg-gray-100 focus:bg-white focus:border-primary text-right"
+                required
+              />
+              <label className="block mb-1 font-semibold text-right" htmlFor="email">אימייל</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="אימייל"
+                value={form.email}
+                onChange={handleChange}
+                className="w-full p-3 border border-gray-400 rounded-md bg-gray-100 focus:bg-white focus:border-primary text-right"
+                required
+              />
+              <label className="block mb-1 font-semibold text-right" htmlFor="message">ההודעה שלך</label>
+              <textarea
+                name="message"
+                id="message"
+                placeholder="ההודעה שלך"
+                value={form.message}
+                onChange={handleChange}
+                className="w-full p-3 border border-gray-400 rounded-md bg-gray-100 focus:bg-white focus:border-primary text-right"
+                required
+              />
               <button
                 type="submit"
-                disabled={loading}
-                className={`w-full bg-primary text-primary-foreground py-3 rounded-md font-medium transition-colors ${
-                  loading ? 'opacity-70 cursor-not-allowed' : 'hover:bg-primary/90'
-                }`}
+                className="w-full bg-primary text-white p-3 rounded-md hover:bg-primary/90 transition font-bold text-lg"
               >
-                {loading ? 'Sending...' : t('contact.submitButton')}
+                שלח
               </button>
             </form>
           </motion.div>

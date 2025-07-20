@@ -11,6 +11,7 @@ import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 import Booking from "./pages/Booking";
+import MovingQuoteDetails from "./pages/MovingQuoteDetails";
 
 const queryClient = new QueryClient();
 
@@ -29,6 +30,7 @@ const App = () => {
               <Route path="/" element={<Layout />}>
               <Route index element={<Home />} />
               <Route path="/booking" element={<Booking />} />
+              <Route path="/project/moving-quote" element={<MovingQuoteDetails />} />
                 <Route path="/about" element={<Home />} />
                 <Route path="/services" element={<Home />} />
                 <Route path="/contact" element={<Home />} />

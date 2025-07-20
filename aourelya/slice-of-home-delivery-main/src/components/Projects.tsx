@@ -34,20 +34,37 @@ const Projects = () => {
       github: 'https://github.com',
       demo: 'https://example.com',
       technologies: ['React', 'Tailwind CSS', 'TypeScript', 'Framer Motion']
-    }
+    },
+    {
+      id: 'moving-quote',
+      image: '/Designer5.png',
+      github: '',
+      demo: '',
+      technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Framer Motion']
+    },
+    {
+      id: 'residents-management',
+      image: '/mitzpe.png',
+      github: '',
+      demo: 'https://my-monorepo-1pzh.onrender.com',
+      technologies: ['React', 'Node.js', 'TypeScript'],
+    },
   ];
 
   return (
-    <section id="projects" className="py-16 bg-accent/5">
+    <section id="projects" className="py-8 bg-accent/5 mt-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-12"
+          className="text-center mb-6"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">{t('projects.title')}</h2>
+          <h2 className="text-4xl md:text-5xl font-extrabold text-blue-700 bg-blue-50 px-8 py-4 rounded-2xl border-b-4 border-blue-300 inline-block mb-4 font-serif flex items-center justify-center gap-2">
+            <span className="text-3xl">📁</span>
+            {t('projects.title')}
+          </h2>
           <div className="w-24 h-1 bg-primary mx-auto"></div>
         </motion.div>
         

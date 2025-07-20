@@ -1,0 +1,55 @@
+[debug] [2025-07-20T09:09:31.860Z] ----------------------------------------------------------------------
+[debug] [2025-07-20T09:09:31.864Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\user\AppData\Local\pnpm\global\5\.pnpm\firebase-tools@14.11.0_@types+node@24.0.12_encoding@0.1.13\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2025-07-20T09:09:31.864Z] CLI Version:   14.11.0
+[debug] [2025-07-20T09:09:31.864Z] Platform:      win32
+[debug] [2025-07-20T09:09:31.865Z] Node Version:  v22.16.0
+[debug] [2025-07-20T09:09:31.865Z] Time:          Sun Jul 20 2025 12:09:31 GMT+0300 (שעון ישראל (קיץ))
+[debug] [2025-07-20T09:09:31.865Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-07-20T09:09:31.870Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-07-20T09:09:31.870Z] > authorizing via signed-in user (arleettt1@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\user\Documents\GitHub\aourelya\aourelya
+
+[debug] [2025-07-20T09:59:53.307Z] ExitPromptError: User force closed the prompt with SIGINT
+    at Interface.sigint (C:\Users\user\AppData\Local\pnpm\global\5\.pnpm\@inquirer+core@10.1.14_@types+node@24.0.12\node_modules\@inquirer\core\dist\commonjs\lib\create-prompt.js:101:37)
+    at Interface.emit (node:events:518:28)
+    at Interface.emit (node:domain:489:12)
+    at [_ttyWrite] [as _ttyWrite] (node:internal/readline/interface:1128:18)
+    at ReadStream.onkeypress (node:internal/readline/interface:267:20)
+    at ReadStream.emit (node:events:530:35)
+    at ReadStream.emit (node:domain:489:12)
+    at emitKeys (node:internal/readline/utils:370:14)
+    at emitKeys.next (<anonymous>)
+    at ReadStream.onData (node:internal/readline/emitKeypressEvents:64:36)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2025-07-20T10:01:26.772Z] ----------------------------------------------------------------------
+[debug] [2025-07-20T10:01:26.774Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\user\AppData\Local\pnpm\global\5\.pnpm\firebase-tools@14.11.0_@types+node@24.0.12_encoding@0.1.13\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2025-07-20T10:01:26.775Z] CLI Version:   14.11.0
+[debug] [2025-07-20T10:01:26.775Z] Platform:      win32
+[debug] [2025-07-20T10:01:26.775Z] Node Version:  v22.16.0
+[debug] [2025-07-20T10:01:26.776Z] Time:          Sun Jul 20 2025 13:01:26 GMT+0300 (שעון ישראל (קיץ))
+[debug] [2025-07-20T10:01:26.776Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-07-20T10:01:26.781Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-07-20T10:01:26.781Z] > authorizing via signed-in user (arleettt1@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\user\Documents\GitHub\aourelya\aourelya
+

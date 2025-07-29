@@ -16,6 +16,7 @@ import {
   Stack
 } from '@mui/material';
 import { Event } from '@mui/icons-material';
+import i18n from 'i18next';
 
 const About = () => {
   const { t } = useTranslation();
@@ -63,14 +64,18 @@ const About = () => {
             style={{ width: '100%' }}
           >
             <Typography
-              variant="h3"
+              variant="h2"
               component="h2"
               sx={{
-                fontWeight: 'bold',
-                mb: 2,
+                fontSize: { xs: '2rem', sm: '2.5rem', md: '3rem' },
+                fontWeight: 700,
+                color: '#1e3a8a', // כחול כהה
+                mb: 4,
                 textAlign: 'center',
-                fontSize: { xs: '1.5rem', sm: '2rem', md: '2.5rem' },
-                color: '#1e3a8a' // כחול כהה
+                fontFamily: i18n.language === 'he' 
+                  ? 'Rubik, Arial, sans-serif' 
+                  : 'Playfair Display, serif',
+                letterSpacing: '-0.02em',
               }}
             >
               {t('about.title')}

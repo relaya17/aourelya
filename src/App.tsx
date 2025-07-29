@@ -63,24 +63,54 @@ const App = () => {
       },
     },
     typography: {
-      fontFamily: direction === 'rtl' ? 'Rubik, Arial, sans-serif' : 'Inter, Arial, sans-serif',
+      fontFamily: direction === 'rtl' 
+        ? 'Rubik, Arial, sans-serif' 
+        : 'Playfair Display, Poppins, Inter, Arial, sans-serif',
       h1: {
         fontWeight: 700,
+        fontFamily: direction === 'rtl' 
+          ? 'Rubik, Arial, sans-serif' 
+          : 'Playfair Display, serif',
       },
       h2: {
         fontWeight: 700,
+        fontFamily: direction === 'rtl' 
+          ? 'Rubik, Arial, sans-serif' 
+          : 'Playfair Display, serif',
       },
       h3: {
         fontWeight: 600,
+        fontFamily: direction === 'rtl' 
+          ? 'Rubik, Arial, sans-serif' 
+          : 'Poppins, sans-serif',
       },
       h4: {
         fontWeight: 600,
+        fontFamily: direction === 'rtl' 
+          ? 'Rubik, Arial, sans-serif' 
+          : 'Poppins, sans-serif',
       },
       h5: {
         fontWeight: 600,
+        fontFamily: direction === 'rtl' 
+          ? 'Rubik, Arial, sans-serif' 
+          : 'Poppins, sans-serif',
       },
       h6: {
         fontWeight: 600,
+        fontFamily: direction === 'rtl' 
+          ? 'Rubik, Arial, sans-serif' 
+          : 'Poppins, sans-serif',
+      },
+      body1: {
+        fontFamily: direction === 'rtl' 
+          ? 'Rubik, Arial, sans-serif' 
+          : 'Inter, sans-serif',
+      },
+      body2: {
+        fontFamily: direction === 'rtl' 
+          ? 'Rubik, Arial, sans-serif' 
+          : 'Inter, sans-serif',
       },
     },
     shape: {
@@ -92,6 +122,9 @@ const App = () => {
           root: {
             textTransform: 'none',
             borderRadius: 8,
+            fontFamily: direction === 'rtl' 
+              ? 'Rubik, Arial, sans-serif' 
+              : 'Poppins, sans-serif',
           },
         },
       },

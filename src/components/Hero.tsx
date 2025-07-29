@@ -13,7 +13,7 @@ import {
 } from '@mui/material';
 
 const Hero = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
 
   return (
@@ -57,29 +57,33 @@ const Hero = () => {
             >
               {/* Greeting & Name */}
               <Typography
-                variant="h6"
-                sx={{ 
-                  fontWeight: 600, 
-                  mb: 1,
-                  fontSize: { xs: '1rem', sm: '1.125rem', md: '1.25rem' },
-                  color: '#1e3a8a' // כחול כהה
-                }}
-              >
-                {t('hero.greeting')}
-              </Typography>
-              
-              <Typography
-                id="hero-heading"
-                variant="h2"
+                variant="h1"
                 component="h1"
                 sx={{
-                  fontWeight: 'bold',
+                  fontSize: { xs: '2.5rem', sm: '3rem', md: '4rem', lg: '5rem' },
+                  fontWeight: 700,
+                  color: '#1e3a8a', // כחול כהה
                   mb: 2,
-                  fontSize: { xs: '2.25rem', sm: '3rem', md: '3.75rem', lg: '4.5rem' },
-                  color: '#1e3a8a' // כחול כהה
+                  textAlign: { xs: 'center', md: 'left' },
+                  fontFamily: i18n.language === 'he' 
+                    ? 'Rubik, Arial, sans-serif' 
+                    : 'Playfair Display, serif',
+                  letterSpacing: { xs: '-0.02em', md: '-0.03em' },
+                  lineHeight: 1.1,
                 }}
               >
-                {t('hero.name')}
+                {t('hero.greeting')} <br />
+                <span style={{ 
+                  background: 'linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
+                  fontFamily: i18n.language === 'he' 
+                    ? 'Rubik, Arial, sans-serif' 
+                    : 'Playfair Display, serif',
+                }}>
+                  {t('hero.name')}
+                </span>
               </Typography>
 
               {/* תמונה של ארלט */}

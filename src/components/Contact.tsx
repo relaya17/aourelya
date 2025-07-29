@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { useToast } from "@/components/ui/use-toast";
+import { useToast } from '@/hooks/use-toast';
 import {
   Container,
   Box,
@@ -17,14 +17,14 @@ import {
   Stack,
   Divider
 } from '@mui/material';
-import { 
-  Mail as MailIcon, 
-  Phone as PhoneIcon, 
+import {
+  Mail as MailIcon,
+  Phone as PhoneIcon,
   Message as MessageIcon 
 } from '@mui/icons-material';
 
 const Contact = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const { toast } = useToast();
   const [ref, inView] = useInView({
     triggerOnce: true,
@@ -75,24 +75,18 @@ const Contact = () => {
         >
           <Box sx={{ textAlign: 'center', mb: { xs: 4, sm: 6 } }}>
             <Typography
-              variant="h3"
+              variant="h2"
               component="h2"
               sx={{
-                fontWeight: 'bold',
+                fontSize: { xs: '2rem', sm: '2.5rem', md: '3rem' },
+                fontWeight: 700,
                 color: '#1e3a8a', // כחול כהה
-                mb: 2,
-                fontSize: { xs: '1.5rem', sm: '2rem', md: '2.5rem', lg: '3rem' },
-                fontStyle: 'italic',
-                textShadow: '2px 2px 4px rgba(0,0,0,0.1)',
-                bgcolor: 'primary.50',
-                px: { xs: 2, sm: 3, md: 4 },
-                py: { xs: 1, sm: 1.5, md: 2 },
-                borderRadius: 2,
-                borderBottom: 4,
-                borderColor: '#1e3a8a', // כחול כהה
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: 1
+                mb: 4,
+                textAlign: 'center',
+                fontFamily: i18n.language === 'he' 
+                  ? 'Rubik, Arial, sans-serif' 
+                  : 'Playfair Display, serif',
+                letterSpacing: '-0.02em',
               }}
             >
               {t('contact.title')}

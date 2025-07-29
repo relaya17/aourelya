@@ -114,17 +114,23 @@ const About = () => {
                   sx={{
                     fontWeight: 'bold',
                     mb: 2,
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: 1
+                    color: '#1e3a8a', // כחול כהה כמו ביתר
+                    fontStyle: 'italic',
+                    textAlign: 'right'
                   }}
                 >
-                  ✨ {t('about.aboutMe')}
+                  {t('about.aboutMe')}
                 </Typography>
                 <Typography
                   variant="body1"
-                  color="text.secondary"
-                  sx={{ lineHeight: 1.8 }}
+                  sx={{ 
+                    lineHeight: 1.8,
+                    color: '#1e3a8a', // כחול כהה כמו ביתר
+                    textAlign: 'right',
+                    fontFamily: i18n.language === 'he' 
+                      ? 'Rubik, Arial, sans-serif' 
+                      : 'Inter, Arial, sans-serif'
+                  }}
                 >
                   {t('about.aboutMeContent')}
                 </Typography>
@@ -139,7 +145,7 @@ const About = () => {
                   sx={{
                     fontWeight: 'bold',
                     mb: 2,
-                    color: 'primary.main',
+                    color: '#1e3a8a', // כחול כהה כמו ביתר
                     fontStyle: 'italic',
                     textAlign: 'right'
                   }}
@@ -153,8 +159,11 @@ const About = () => {
                         primary={service}
                         primaryTypographyProps={{
                           variant: 'body2',
-                          color: 'text.secondary',
-                          textAlign: 'right'
+                          textAlign: 'right',
+                          color: '#1e3a8a', // כחול כהה כמו ביתר
+                          fontFamily: i18n.language === 'he' 
+                            ? 'Rubik, Arial, sans-serif' 
+                            : 'Inter, Arial, sans-serif'
                         }}
                         sx={{ textAlign: 'right' }}
                       />
@@ -182,7 +191,14 @@ const About = () => {
                 <Stack spacing={2}>
                   {(t('about.whyWorkWithMeList', { returnObjects: true }) as string[]).map((item: string, index: number) => (
                     <Box key={index} sx={{ display: 'flex', alignItems: 'center', gap: 1, justifyContent: 'flex-end' }}>
-                      <Typography variant="body2" sx={{ fontWeight: 'bold', textAlign: 'right' }}>
+                      <Typography variant="body2" sx={{ 
+                        fontWeight: 'bold', 
+                        textAlign: 'right',
+                        color: '#1e3a8a', // כחול כהה כמו ביתר
+                        fontFamily: i18n.language === 'he' 
+                          ? 'Rubik, Arial, sans-serif' 
+                          : 'Inter, Arial, sans-serif'
+                      }}>
                         {item}
                       </Typography>
                     </Box>
@@ -215,7 +231,14 @@ const About = () => {
                 
                 <Typography
                   variant="body1"
-                  sx={{ mb: 2, px: 2 }}
+                  sx={{ 
+                    mb: 2, 
+                    px: 2,
+                    color: '#1e3a8a', // כחול כהה כמו ביתר
+                    fontFamily: i18n.language === 'he' 
+                      ? 'Rubik, Arial, sans-serif' 
+                      : 'Inter, Arial, sans-serif'
+                  }}
                 >
                   {t('about.nextProjectDescription')}
                 </Typography>

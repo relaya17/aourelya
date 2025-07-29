@@ -3,6 +3,19 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import {
+  Container,
+  Box,
+  Typography,
+  Card,
+  CardContent,
+  List,
+  ListItem,
+  ListItemText,
+  Chip,
+  Stack
+} from '@mui/material';
+import { Star as StarIcon } from '@mui/icons-material';
 
 const Skills = () => {
   const { t } = useTranslation();
@@ -34,42 +47,101 @@ const Skills = () => {
   };
 
   return (
-    <section id="skills" className="py-6 sm:py-8 mt-6 sm:mt-8">
-      <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+    <Box
+      component="section"
+      id="skills"
+      sx={{
+        py: { xs: 3, sm: 4 },
+        mt: { xs: 3, sm: 4 }
+      }}
+    >
+      <Container maxWidth="lg">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-4 sm:mb-6"
         >
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-blue-700 bg-blue-50 px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-xl sm:rounded-2xl border-b-4 border-blue-300 inline-block mb-3 sm:mb-4 font-serif flex items-center justify-center gap-2">
-            <span className="text-2xl sm:text-3xl">⭐</span>
-            {t('skills.title')}
-          </h2>
+          <Box sx={{ textAlign: 'center', mb: { xs: 2, sm: 3 } }}>
+            <Typography
+              variant="h3"
+              component="h2"
+              sx={{
+                fontWeight: 'bold',
+                color: 'primary.dark',
+                mb: 2,
+                fontSize: { xs: '1.5rem', sm: '2rem', md: '2.5rem', lg: '3rem' },
+                fontStyle: 'italic',
+                textShadow: '2px 2px 4px rgba(0,0,0,0.1)',
+                bgcolor: 'primary.50',
+                px: { xs: 2, sm: 3, md: 4 },
+                py: { xs: 1, sm: 1.5, md: 2 },
+                borderRadius: 2,
+                borderBottom: 4,
+                borderColor: 'primary.main',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: 1
+              }}
+            >
+              <StarIcon sx={{ fontSize: { xs: '1.25rem', sm: '1.5rem', md: '1.875rem' } }} />
+              {t('skills.title')}
+            </Typography>
+          </Box>
         </motion.div>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+        <Box
+          display="grid"
+          gridTemplateColumns={{ xs: '1fr', sm: 'repeat(2, 1fr)', lg: 'repeat(4, 1fr)' }}
+          gap={3}
+        >
           {/* Frontend Skills */}
           <motion.div
             variants={container}
             initial="hidden"
             animate={inView ? "show" : "hidden"}
-            className="bg-card rounded-lg p-4 sm:p-6 shadow-sm"
           >
-            <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-center text-blue-600 font-serif italic">{t('skills.frontend')}</h3>
-            <ul className="space-y-1 sm:space-y-2 text-sm sm:text-base">
-              {skills.frontend.map((skill, index) => (
-                <motion.li 
-                  key={index} 
-                  variants={item}
-                  className="flex flex-row-reverse items-center"
+            <Card elevation={1} sx={{ height: '100%' }}>
+              <CardContent sx={{ p: { xs: 3, sm: 4 } }}>
+                <Typography
+                  variant="h6"
+                  component="h3"
+                  sx={{
+                    fontWeight: 600,
+                    mb: 2,
+                    textAlign: 'center',
+                    color: 'primary.main',
+                    fontStyle: 'italic'
+                  }}
                 >
-                  <span className="w-2 h-2 bg-primary rounded-full ml-2"></span>
-                  <span>{skill}</span>
-                </motion.li>
-              ))}
-            </ul>
+                  {t('skills.frontend')}
+                </Typography>
+                <List dense>
+                  {skills.frontend.map((skill, index) => (
+                    <motion.div key={index} variants={item}>
+                      <ListItem sx={{ py: 0.5, direction: 'rtl' }}>
+                        <Box
+                          sx={{
+                            width: 8,
+                            height: 8,
+                            bgcolor: 'primary.main',
+                            borderRadius: '50%',
+                            mr: 1
+                          }}
+                        />
+                        <ListItemText
+                          primary={skill}
+                          primaryTypographyProps={{
+                            variant: 'body2',
+                            sx: { textAlign: 'right' }
+                          }}
+                        />
+                      </ListItem>
+                    </motion.div>
+                  ))}
+                </List>
+              </CardContent>
+            </Card>
           </motion.div>
           
           {/* Backend Skills */}
@@ -78,21 +150,48 @@ const Skills = () => {
             initial="hidden"
             animate={inView ? "show" : "hidden"}
             transition={{ delay: 0.2 }}
-            className="bg-card rounded-lg p-4 sm:p-6 shadow-sm"
           >
-            <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-center text-blue-600 font-serif italic">{t('skills.backend')}</h3>
-            <ul className="space-y-1 sm:space-y-2 text-sm sm:text-base">
-              {skills.backend.map((skill, index) => (
-                <motion.li 
-                  key={index} 
-                  variants={item}
-                  className="flex flex-row-reverse items-center"
+            <Card elevation={1} sx={{ height: '100%' }}>
+              <CardContent sx={{ p: { xs: 3, sm: 4 } }}>
+                <Typography
+                  variant="h6"
+                  component="h3"
+                  sx={{
+                    fontWeight: 600,
+                    mb: 2,
+                    textAlign: 'center',
+                    color: 'primary.main',
+                    fontStyle: 'italic'
+                  }}
                 >
-                  <span className="w-2 h-2 bg-primary rounded-full ml-2"></span>
-                  <span>{skill}</span>
-                </motion.li>
-              ))}
-            </ul>
+                  {t('skills.backend')}
+                </Typography>
+                <List dense>
+                  {skills.backend.map((skill, index) => (
+                    <motion.div key={index} variants={item}>
+                      <ListItem sx={{ py: 0.5, direction: 'rtl' }}>
+                        <Box
+                          sx={{
+                            width: 8,
+                            height: 8,
+                            bgcolor: 'primary.main',
+                            borderRadius: '50%',
+                            mr: 1
+                          }}
+                        />
+                        <ListItemText
+                          primary={skill}
+                          primaryTypographyProps={{
+                            variant: 'body2',
+                            sx: { textAlign: 'right' }
+                          }}
+                        />
+                      </ListItem>
+                    </motion.div>
+                  ))}
+                </List>
+              </CardContent>
+            </Card>
           </motion.div>
           
           {/* Database Skills */}
@@ -101,21 +200,48 @@ const Skills = () => {
             initial="hidden"
             animate={inView ? "show" : "hidden"}
             transition={{ delay: 0.4 }}
-            className="bg-card rounded-lg p-4 sm:p-6 shadow-sm"
           >
-            <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-center text-blue-600 font-serif italic">{t('skills.databases')}</h3>
-            <ul className="space-y-1 sm:space-y-2 text-sm sm:text-base">
-              {skills.databases.map((skill, index) => (
-                <motion.li 
-                  key={index} 
-                  variants={item}
-                  className="flex flex-row-reverse items-center"
+            <Card elevation={1} sx={{ height: '100%' }}>
+              <CardContent sx={{ p: { xs: 3, sm: 4 } }}>
+                <Typography
+                  variant="h6"
+                  component="h3"
+                  sx={{
+                    fontWeight: 600,
+                    mb: 2,
+                    textAlign: 'center',
+                    color: 'primary.main',
+                    fontStyle: 'italic'
+                  }}
                 >
-                  <span className="w-2 h-2 bg-primary rounded-full ml-2"></span>
-                  <span>{skill}</span>
-                </motion.li>
-              ))}
-            </ul>
+                  {t('skills.databases')}
+                </Typography>
+                <List dense>
+                  {skills.databases.map((skill, index) => (
+                    <motion.div key={index} variants={item}>
+                      <ListItem sx={{ py: 0.5, direction: 'rtl' }}>
+                        <Box
+                          sx={{
+                            width: 8,
+                            height: 8,
+                            bgcolor: 'primary.main',
+                            borderRadius: '50%',
+                            mr: 1
+                          }}
+                        />
+                        <ListItemText
+                          primary={skill}
+                          primaryTypographyProps={{
+                            variant: 'body2',
+                            sx: { textAlign: 'right' }
+                          }}
+                        />
+                      </ListItem>
+                    </motion.div>
+                  ))}
+                </List>
+              </CardContent>
+            </Card>
           </motion.div>
           
           {/* Tools */}
@@ -124,25 +250,52 @@ const Skills = () => {
             initial="hidden"
             animate={inView ? "show" : "hidden"}
             transition={{ delay: 0.6 }}
-            className="bg-card rounded-lg p-4 sm:p-6 shadow-sm"
           >
-            <h3 className="text-lg sm:text-xl font-semibold mb-3 sm:mb-4 text-center text-blue-600 font-serif italic">{t('skills.tools')}</h3>
-            <ul className="space-y-1 sm:space-y-2 text-sm sm:text-base">
-              {skills.tools.map((skill, index) => (
-                <motion.li 
-                  key={index} 
-                  variants={item}
-                  className="flex flex-row-reverse items-center"
+            <Card elevation={1} sx={{ height: '100%' }}>
+              <CardContent sx={{ p: { xs: 3, sm: 4 } }}>
+                <Typography
+                  variant="h6"
+                  component="h3"
+                  sx={{
+                    fontWeight: 600,
+                    mb: 2,
+                    textAlign: 'center',
+                    color: 'primary.main',
+                    fontStyle: 'italic'
+                  }}
                 >
-                  <span className="w-2 h-2 bg-primary rounded-full ml-2"></span>
-                  <span>{skill}</span>
-                </motion.li>
-              ))}
-            </ul>
+                  {t('skills.tools')}
+                </Typography>
+                <List dense>
+                  {skills.tools.map((skill, index) => (
+                    <motion.div key={index} variants={item}>
+                      <ListItem sx={{ py: 0.5, direction: 'rtl' }}>
+                        <Box
+                          sx={{
+                            width: 8,
+                            height: 8,
+                            bgcolor: 'primary.main',
+                            borderRadius: '50%',
+                            mr: 1
+                          }}
+                        />
+                        <ListItemText
+                          primary={skill}
+                          primaryTypographyProps={{
+                            variant: 'body2',
+                            sx: { textAlign: 'right' }
+                          }}
+                        />
+                      </ListItem>
+                    </motion.div>
+                  ))}
+                </List>
+              </CardContent>
+            </Card>
           </motion.div>
-        </div>
-      </div>
-    </section>
+        </Box>
+      </Container>
+    </Box>
   );
 };
 

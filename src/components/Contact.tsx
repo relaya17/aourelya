@@ -4,7 +4,24 @@ import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { useToast } from "@/components/ui/use-toast";
-import { Mail, Phone, MessageCircle } from 'lucide-react';
+import {
+  Container,
+  Box,
+  Typography,
+  Paper,
+  TextField,
+  Button,
+  Card,
+  CardContent,
+  IconButton,
+  Stack,
+  Divider
+} from '@mui/material';
+import { 
+  Mail as MailIcon, 
+  Phone as PhoneIcon, 
+  Message as MessageIcon 
+} from '@mui/icons-material';
 
 const Contact = () => {
   const { t } = useTranslation();
@@ -41,139 +58,268 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-12 sm:py-16">
-      <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+    <Box
+      component="section"
+      id="contact"
+      sx={{
+        py: { xs: 6, sm: 8 },
+        backgroundColor: 'grey.50'
+      }}
+    >
+      <Container maxWidth="lg">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-8 sm:mb-12"
         >
-          <div className="mb-6 sm:mb-8 border-b-2 border-primary pb-2 text-right">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-blue-700 bg-blue-50 px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-xl sm:rounded-2xl border-b-4 border-blue-300 inline-block mb-3 sm:mb-4 font-serif flex items-center justify-center gap-2">
-              <Mail className="h-5 w-5 sm:h-6 sm:w-6 md:h-7 md:w-7 text-blue-700" />
+          <Box sx={{ textAlign: 'center', mb: { xs: 4, sm: 6 } }}>
+            <Typography
+              variant="h3"
+              component="h2"
+              sx={{
+                fontWeight: 'bold',
+                color: 'primary.dark',
+                mb: 2,
+                fontSize: { xs: '1.5rem', sm: '2rem', md: '2.5rem', lg: '3rem' },
+                fontStyle: 'italic',
+                textShadow: '2px 2px 4px rgba(0,0,0,0.1)',
+                bgcolor: 'primary.50',
+                px: { xs: 2, sm: 3, md: 4 },
+                py: { xs: 1, sm: 1.5, md: 2 },
+                borderRadius: 2,
+                borderBottom: 4,
+                borderColor: 'primary.main',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: 1
+              }}
+            >
+              <MailIcon sx={{ fontSize: { xs: '1.25rem', sm: '1.5rem', md: '1.875rem' } }} />
               {t('contact.title')}
-            </h2>
-          </div>
+            </Typography>
+          </Box>
         </motion.div>
         
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
+        <Box
+          display="grid"
+          gridTemplateColumns={{ xs: '1fr', lg: 'repeat(2, 1fr)' }}
+          gap={3}
+          maxWidth="lg"
+          sx={{ mx: 'auto' }}
+        >
           {/* Contact Information */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="lg:col-span-1"
-          >
-            <div className="bg-white shadow-md rounded-lg p-4 sm:p-6 space-y-6 text-right">
-              <h3 className="text-xl sm:text-2xl font-bold text-blue-600 mb-4 text-center">{t('contact.contactMethods')}</h3>
-              
-              {/* Email */}
-              <div className="flex items-center justify-center space-x-3 rtl:space-x-reverse">
-                <Mail className="h-5 w-5 text-blue-600 flex-shrink-0" />
-                <div className="text-center">
-                  <p className="font-semibold text-sm sm:text-base">{t('contact.email')}</p>
-                  <a 
-                    href="mailto:contact@aurelia.dev" 
-                    className="text-blue-600 hover:text-blue-800 text-sm sm:text-base"
+          <Box>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+            >
+              <Card elevation={2} sx={{ height: '100%' }}>
+                <CardContent sx={{ p: { xs: 3, sm: 4 }, textAlign: 'center' }}>
+                  <Typography
+                    variant="h5"
+                    component="h3"
+                    sx={{
+                      fontWeight: 'bold',
+                      color: 'primary.main',
+                      mb: 3
+                    }}
                   >
-                    contact@aurelia.dev
-                  </a>
-                </div>
-              </div>
+                    {t('contact.contactMethods')}
+                  </Typography>
+                  
+                  <Stack spacing={3}>
+                    {/* Email */}
+                    <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 2 }}>
+                      <MailIcon color="primary" />
+                      <Box>
+                        <Typography variant="body2" fontWeight="bold">
+                          {t('contact.email')}
+                        </Typography>
+                        <Typography
+                          component="a"
+                          href="mailto:contact@aurelia.dev"
+                          variant="body2"
+                          color="primary"
+                          sx={{ textDecoration: 'none', '&:hover': { textDecoration: 'underline' } }}
+                        >
+                          contact@aurelia.dev
+                        </Typography>
+                      </Box>
+                    </Box>
 
-              {/* Phone */}
-              <div className="flex items-center justify-center space-x-3 rtl:space-x-reverse">
-                <Phone className="h-5 w-5 text-blue-600 flex-shrink-0" />
-                <div className="text-center">
-                  <p className="font-semibold text-sm sm:text-base">{t('contact.phone')}</p>
-                  <a 
-                    href="tel:+972501234567" 
-                    className="text-blue-600 hover:text-blue-800 text-sm sm:text-base"
-                  >
-                    +972-50-123-4567
-                  </a>
-                </div>
-              </div>
+                    {/* Phone */}
+                    <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 2 }}>
+                      <PhoneIcon color="primary" />
+                      <Box>
+                        <Typography variant="body2" fontWeight="bold">
+                          {t('contact.phone')}
+                        </Typography>
+                        <Typography
+                          component="a"
+                          href="tel:+972501234567"
+                          variant="body2"
+                          color="primary"
+                          sx={{ textDecoration: 'none', '&:hover': { textDecoration: 'underline' } }}
+                        >
+                          +972-50-123-4567
+                        </Typography>
+                      </Box>
+                    </Box>
 
-              {/* WhatsApp */}
-              <div className="flex items-center justify-center space-x-3 rtl:space-x-reverse">
-                <MessageCircle className="h-5 w-5 text-green-600 flex-shrink-0" />
-                <div className="text-center">
-                  <p className="font-semibold text-sm sm:text-base">{t('contact.whatsapp')}</p>
-                  <a 
-                    href="https://wa.me/972501234567" 
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-green-600 hover:text-green-800 text-sm sm:text-base"
-                  >
-                    +972-50-123-4567
-                  </a>
-                </div>
-              </div>
+                    {/* WhatsApp */}
+                    <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 2 }}>
+                      <MessageIcon sx={{ color: 'success.main' }} />
+                      <Box>
+                        <Typography variant="body2" fontWeight="bold">
+                          {t('contact.whatsapp')}
+                        </Typography>
+                        <Typography
+                          component="a"
+                          href="https://wa.me/972501234567"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          variant="body2"
+                          color="success.main"
+                          sx={{ textDecoration: 'none', '&:hover': { textDecoration: 'underline' } }}
+                        >
+                          +972-50-123-4567
+                        </Typography>
+                      </Box>
+                    </Box>
 
-              {/* Additional Contact Info */}
-              <div className="pt-4">
-                <p className="text-sm text-gray-600 mb-2 text-center">{t('contact.workingHours')}:</p>
-                <p className="text-sm text-gray-600 text-center">{t('contact.weekdays')}</p>
-                <p className="text-sm text-gray-600 text-center">{t('contact.friday')}</p>
-              </div>
-            </div>
-          </motion.div>
+                    <Divider />
+
+                    {/* Working Hours */}
+                    <Box>
+                      <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
+                        {t('contact.workingHours')}:
+                      </Typography>
+                      <Typography variant="body2" color="text.secondary">
+                        {t('contact.weekdays')}
+                      </Typography>
+                      <Typography variant="body2" color="text.secondary">
+                        {t('contact.friday')}
+                      </Typography>
+                    </Box>
+                  </Stack>
+                </CardContent>
+              </Card>
+            </motion.div>
+          </Box>
           
           {/* Contact Form */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="lg:col-span-2 bg-white shadow-md rounded-lg p-4 sm:p-6 md:p-8"
-          >
-            <h3 className="text-xl sm:text-2xl font-bold text-blue-600 mb-4 text-center">{t('contact.sendMessage')}</h3>
-            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6 text-right max-w-md mx-auto">
-              <label className="block mb-1 font-semibold text-right text-sm sm:text-base" htmlFor="name">שם מלא</label>
-              <input
-                type="text"
-                name="name"
-                id="name"
-                placeholder="שם מלא"
-                value={form.name}
-                onChange={handleChange}
-                className="w-full p-2 sm:p-3 border border-gray-400 rounded-md bg-gray-100 focus:bg-white focus:border-primary text-right text-sm sm:text-base"
-                required
-              />
-              <label className="block mb-1 font-semibold text-right text-sm sm:text-base" htmlFor="email">אימייל</label>
-              <input
-                type="email"
-                name="email"
-                id="email"
-                placeholder="אימייל"
-                value={form.email}
-                onChange={handleChange}
-                className="w-full p-2 sm:p-3 border border-gray-400 rounded-md bg-gray-100 focus:bg-white focus:border-primary text-right text-sm sm:text-base"
-                required
-              />
-              <label className="block mb-1 font-semibold text-right text-sm sm:text-base" htmlFor="message">ההודעה שלך</label>
-              <textarea
-                name="message"
-                id="message"
-                placeholder="ההודעה שלך"
-                value={form.message}
-                onChange={handleChange}
-                className="w-full p-2 sm:p-3 border border-gray-400 rounded-md bg-gray-100 focus:bg-white focus:border-primary text-right text-sm sm:text-base"
-                required
-              />
-              <button
-                type="submit"
-                className="w-full bg-primary text-white p-2 sm:p-3 rounded-md hover:bg-primary/90 transition font-bold text-base sm:text-lg"
-              >
-                שלח
-              </button>
-            </form>
-          </motion.div>
-        </div>
-      </div>
-    </section>
+          <Box>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              <Card elevation={2}>
+                <CardContent sx={{ p: { xs: 3, sm: 4, md: 5 } }}>
+                  <Typography
+                    variant="h5"
+                    component="h3"
+                    sx={{
+                      fontWeight: 'bold',
+                      color: 'primary.main',
+                      mb: 4,
+                      textAlign: 'center'
+                    }}
+                  >
+                    {t('contact.sendMessage')}
+                  </Typography>
+                  
+                  <Box
+                    component="form"
+                    onSubmit={handleSubmit}
+                    sx={{
+                      maxWidth: 'md',
+                      mx: 'auto',
+                      direction: 'rtl'
+                    }}
+                  >
+                    <Stack spacing={3}>
+                      <TextField
+                        label="שם מלא"
+                        name="name"
+                        value={form.name}
+                        onChange={handleChange}
+                        required
+                        fullWidth
+                        variant="outlined"
+                        sx={{
+                          '& .MuiInputLabel-root': {
+                            textAlign: 'right'
+                          },
+                          '& .MuiInputBase-input': {
+                            textAlign: 'right'
+                          }
+                        }}
+                      />
+                      
+                      <TextField
+                        label="אימייל"
+                        name="email"
+                        type="email"
+                        value={form.email}
+                        onChange={handleChange}
+                        required
+                        fullWidth
+                        variant="outlined"
+                        sx={{
+                          '& .MuiInputLabel-root': {
+                            textAlign: 'right'
+                          },
+                          '& .MuiInputBase-input': {
+                            textAlign: 'right'
+                          }
+                        }}
+                      />
+                      
+                      <TextField
+                        label="ההודעה שלך"
+                        name="message"
+                        value={form.message}
+                        onChange={handleChange}
+                        required
+                        fullWidth
+                        multiline
+                        rows={4}
+                        variant="outlined"
+                        sx={{
+                          '& .MuiInputLabel-root': {
+                            textAlign: 'right'
+                          },
+                          '& .MuiInputBase-input': {
+                            textAlign: 'right'
+                          }
+                        }}
+                      />
+                      
+                      <Button
+                        type="submit"
+                        variant="contained"
+                        size="large"
+                        disabled={loading}
+                        sx={{
+                          py: 1.5,
+                          fontSize: '1rem',
+                          fontWeight: 'bold'
+                        }}
+                      >
+                        {loading ? 'שולח...' : 'שלח'}
+                      </Button>
+                    </Stack>
+                  </Box>
+                </CardContent>
+              </Card>
+            </motion.div>
+          </Box>
+        </Box>
+      </Container>
+    </Box>
   );
 };
 

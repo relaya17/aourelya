@@ -92,7 +92,10 @@ const Hero = () => {
                   mb: { xs: 2, sm: 3 },
                   border: 4,
                   borderColor: 'primary.main',
-                  boxShadow: 3
+                  boxShadow: 3,
+                  '& img': {
+                    objectPosition: 'center 20%'
+                  }
                 }}
               />
 

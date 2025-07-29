@@ -45,7 +45,10 @@ const About = () => {
             height: { xs: 192, sm: 256, md: 320 },
             borderRadius: 2,
             boxShadow: 6,
-            mb: { xs: 3, sm: 5 }
+            mb: { xs: 3, sm: 5 },
+            '& img': {
+              objectPosition: 'center 20%'
+            }
           }}
         />
       </Box>

@@ -176,6 +176,18 @@ const About = () => {
                 <List sx={{ py: 0 }}>
                   {(t('about.servicesList', { returnObjects: true }) as string[]).map((service: string, index: number) => (
                     <ListItem key={index} sx={{ py: 0.5, justifyContent: 'flex-end' }}>
+                      <Typography
+                        variant="body2"
+                        sx={{
+                          color: '#1e3a8a',
+                          fontWeight: 'bold',
+                          mr: 1,
+                          minWidth: '20px',
+                          textAlign: 'right'
+                        }}
+                      >
+                        {index + 1}.
+                      </Typography>
                       <ListItemText
                         primary={service}
                         primaryTypographyProps={{

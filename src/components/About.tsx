@@ -97,18 +97,25 @@ const About = () => {
           transition={{ duration: 0.5, delay: 0.2 }}
             style={{ width: '100%' }}
           >
-            <Paper
-              elevation={2}
-              sx={{
-                p: { xs: 3, sm: 4 },
-                borderRadius: 3,
-                textAlign: 'right',
-                direction: 'rtl',
-                backgroundColor: 'rgba(255, 255, 255, 0.9)'
-              }}
-            >
+            <Stack spacing={4} sx={{ width: '100%' }}>
               {/* קצת עליי */}
-              <Box sx={{ mb: 4 }}>
+              <Paper
+                elevation={3}
+                sx={{
+                  p: { xs: 3, sm: 4 },
+                  borderRadius: 3,
+                  textAlign: 'right',
+                  direction: 'rtl',
+                  backgroundColor: 'rgba(255, 255, 255, 0.95)',
+                  border: 2,
+                  borderColor: '#1e3a8a',
+                  '&:hover': {
+                    elevation: 6,
+                    transform: 'translateY(-2px)',
+                    transition: 'all 0.3s ease'
+                  }
+                }}
+              >
                 <Typography
                   variant="h5"
                   sx={{
@@ -134,12 +141,26 @@ const About = () => {
                 >
                   {t('about.aboutMeContent')}
                 </Typography>
-              </Box>
-
-              <Divider sx={{ my: 3 }} />
+              </Paper>
 
               {/* השירותים שלי */}
-              <Box sx={{ mb: 4 }}>
+              <Paper
+                elevation={3}
+                sx={{
+                  p: { xs: 3, sm: 4 },
+                  borderRadius: 3,
+                  textAlign: 'right',
+                  direction: 'rtl',
+                  backgroundColor: 'rgba(255, 255, 255, 0.95)',
+                  border: 2,
+                  borderColor: '#1e3a8a',
+                  '&:hover': {
+                    elevation: 6,
+                    transform: 'translateY(-2px)',
+                    transition: 'all 0.3s ease'
+                  }
+                }}
+              >
                 <Typography
                   variant="h5"
                   sx={{
@@ -170,12 +191,26 @@ const About = () => {
                     </ListItem>
                   ))}
                 </List>
-              </Box>
-
-              <Divider sx={{ my: 3 }} />
+              </Paper>
 
               {/* למה לעבוד איתי */}
-              <Box sx={{ mb: 4 }}>
+              <Paper
+                elevation={3}
+                sx={{
+                  p: { xs: 3, sm: 4 },
+                  borderRadius: 3,
+                  textAlign: 'right',
+                  direction: 'rtl',
+                  backgroundColor: 'rgba(255, 255, 255, 0.95)',
+                  border: 2,
+                  borderColor: '#1e3a8a',
+                  '&:hover': {
+                    elevation: 6,
+                    transform: 'translateY(-2px)',
+                    transition: 'all 0.3s ease'
+                  }
+                }}
+              >
                 <Typography
                   variant="h5"
                   sx={{
@@ -204,10 +239,25 @@ const About = () => {
                     </Box>
                   ))}
                 </Stack>
-              </Box>
+              </Paper>
 
               {/* צור קשר */}
-              <Box sx={{ mt: 8, textAlign: 'center' }}>
+              <Paper
+                elevation={3}
+                sx={{
+                  p: { xs: 3, sm: 4 },
+                  borderRadius: 3,
+                  textAlign: 'center',
+                  backgroundColor: 'rgba(255, 255, 255, 0.95)',
+                  border: 2,
+                  borderColor: '#1e3a8a',
+                  '&:hover': {
+                    elevation: 6,
+                    transform: 'translateY(-2px)',
+                    transition: 'all 0.3s ease'
+                  }
+                }}
+              >
                 <Typography
                   variant="h3"
                   component="h2"
@@ -265,8 +315,8 @@ const About = () => {
                 >
                   {t('contact.title')}
                 </Button>
-              </Box>
-            </Paper>
+              </Paper>
+            </Stack>
         </motion.div>
         </Box>
       </Container>

@@ -117,18 +117,6 @@ const About = () => {
                 }}
               >
                 <Typography
-                  variant="h5"
-                  sx={{
-                    fontWeight: 'bold',
-                    mb: 2,
-                    color: '#1e3a8a', // כחול כהה כמו ביתר
-                    fontStyle: 'italic',
-                    textAlign: i18n.language === 'he' ? 'right' : 'center'
-                  }}
-                >
-                  {t('about.aboutMe')}
-                </Typography>
-                <Typography
                   variant="body1"
                   sx={{ 
                     lineHeight: 1.8,
@@ -287,7 +275,7 @@ const About = () => {
                     left: 0,
                     right: 0,
                     bottom: 0,
-                    backgroundColor: 'rgba(255, 255, 255, 0.9)',
+                    backgroundColor: 'rgba(255, 255, 255, 0.3)',
                     borderRadius: 3,
                     zIndex: 1
                   }
@@ -326,7 +314,11 @@ const About = () => {
                     fontSize: '1rem',
                     fontFamily: 'Segoe UI, Tahoma, Geneva, Verdana, sans-serif',
                     position: 'relative',
-                    zIndex: 2
+                    zIndex: 2,
+                    textShadow: '1px 1px 2px rgba(255, 255, 255, 0.8)',
+                    bgcolor: 'rgba(255, 255, 255, 0.7)',
+                    borderRadius: 1,
+                    py: 1
                   }}
                 >
                   {t('about.nextProjectDescription')}

@@ -56,11 +56,11 @@ const About = () => {
       
       <Container maxWidth="md">
         <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-          <motion.div
-            ref={ref}
-            initial={{ opacity: 0, y: 20 }}
-            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.5 }}
+        <motion.div
+          ref={ref}
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.5 }}
             style={{ width: '100%' }}
           >
             <Typography
@@ -89,12 +89,12 @@ const About = () => {
                 mb: { xs: 3, sm: 4 }
               }}
             />
-          </motion.div>
+        </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
             style={{ width: '100%' }}
           >
             <Paper
@@ -119,18 +119,14 @@ const About = () => {
                     gap: 1
                   }}
                 >
-                  ✨ קצת עליי
+                  ✨ {t('about.aboutMe')}
                 </Typography>
                 <Typography
                   variant="body1"
                   color="text.secondary"
                   sx={{ lineHeight: 1.8 }}
                 >
-                  מפתחת מערכות ואתרי אינטרנט חכמים עם התמחות בטכנולוגיות המובילות בעולם הפיתוח — JavaScript, React, TypeScript, Node.js, WordPress ו־Firebase.
-                  <br /><br />
-                  אני בונה פתרונות דיגיטליים מותאמים אישית, שמחברים בין טכנולוגיה מתקדמת, עיצוב מדויק ו־חוויית משתמש חלקה.
-                  <br /><br />
-                  מלווה עסקים, יזמים ופרויקטים מיוחדים משלב הרעיון ועד השקה מוצלחת — עם תשתיות חזקות, אופטימיזציה ל־SEO, והתאמה מלאה למובייל ולדסקטופ.
+                  {t('about.aboutMeContent')}
                 </Typography>
               </Box>
 
@@ -148,18 +144,10 @@ const About = () => {
                     textAlign: 'right'
                   }}
                 >
-                  השירותים שלי
+                  {t('about.services')}
                 </Typography>
                 <List sx={{ py: 0 }}>
-                  {[
-                    'פיתוח אתרי תדמית, חנויות, בלוגים ואתרי פורטפוליו',
-                    'פיתוח מערכות מורכבות עם Firebase, MongoDB, Express ו־AI',
-                    'בניית רכיבים מותאמים אישית ב־React ו־TypeScript',
-                    'פיתוח תוספים/תבניות ייעודיים ל־WordPress',
-                    'שילוב מערכות תשלום, CRM, APIs ו־Webhooks',
-                    'אופטימיזציה ל־SEO, מהירות ונגישות (WCAG)',
-                    'עיצוב UX/UI מוקפד מבוסס מחקר והתנהגות משתמשים'
-                  ].map((service, index) => (
+                  {(t('about.servicesList', { returnObjects: true }) as string[]).map((service: string, index: number) => (
                     <ListItem key={index} sx={{ py: 0.5, justifyContent: 'flex-end' }}>
                       <ListItemText
                         primary={service}
@@ -191,20 +179,14 @@ const About = () => {
                     gap: 1
                   }}
                 >
-                  🚀 למה לעבוד איתי?
+                  🚀 {t('about.whyWorkWithMe')}
                 </Typography>
                 <Stack spacing={2}>
-                  {[
-                    { icon: '💡', text: 'שילוב של טכנולוגיה מתקדמת, עיצוב חווייתי וחשיבה תכל\'סית' },
-                    { icon: '🛠', text: 'ניסיון מוכח בפיתוח מערכות חכמות עם תוצאות בשטח' },
-                    { icon: '🤝', text: 'ליווי אישי, שקיפות ותקשורת בגובה העיניים' },
-                    { icon: '📱', text: 'התאמה מלאה למובייל, נגישות ואופטימיזציית SEO' },
-                    { icon: '🧠', text: 'ראייה רחבה – גם כמפתחת וגם כיועצת מוצר וטכנולוגיה' }
-                  ].map((item, index) => (
+                  {(t('about.whyWorkWithMeList', { returnObjects: true }) as string[]).map((item: string, index: number) => (
                     <Box key={index} sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                      <Typography variant="h6">{item.icon}</Typography>
+                      <Typography variant="h6">💡</Typography>
                       <Typography variant="body2" sx={{ fontWeight: 'bold' }}>
-                        {item.text}
+                        {item}
                       </Typography>
                     </Box>
                   ))}
@@ -212,13 +194,13 @@ const About = () => {
               </Box>
 
               {/* צור קשר */}
-              <Box sx={{ mt: 6, textAlign: 'center' }}>
+              <Box sx={{ mt: 8, textAlign: 'center' }}>
                 <Typography
                   variant="h3"
                   component="h2"
                   sx={{
                     fontWeight: 'bold',
-                    color: 'primary.dark',
+                    color: '#1e3a8a', // כחול כהה כמו כותר ראשית
                     mb: 2,
                     fontSize: { xs: '1.5rem', sm: '2rem', md: '2.5rem', lg: '3rem' },
                     fontStyle: 'italic',
@@ -228,41 +210,44 @@ const About = () => {
                     py: { xs: 1, sm: 1.5, md: 2 },
                     borderRadius: 2,
                     borderBottom: 4,
-                    borderColor: 'primary.dark'
+                    borderColor: '#1e3a8a' // כחול כהה
                   }}
                 >
-                  הפרויקט הבא שלך מתחיל כאן
+                  {t('about.nextProject')}
                 </Typography>
                 
                 <Typography
                   variant="body1"
                   sx={{ mb: 2, px: 2 }}
                 >
-                  אני מזמינה אותך ליצור קשר ולגלות איך אפשר להפוך רעיון חכם למציאות חכמה
+                  {t('about.nextProjectDescription')}
                 </Typography>
                 
                 <Button
                   component="a"
-                  href="/booking"
+                href="/booking"
                   variant="outlined"
                   size="large"
-                  startIcon={<Event />}
                   sx={{
                     px: { xs: 3, sm: 4, md: 5 },
                     py: { xs: 1.5, sm: 2, md: 2.5 },
                     fontSize: { xs: '0.875rem', sm: '1rem' },
                     fontWeight: 'bold',
                     borderWidth: 2,
+                    borderColor: '#1e3a8a', // כחול כהה
+                    color: '#1e3a8a', // כחול כהה
                     '&:hover': {
-                      borderWidth: 2
+                      borderWidth: 2,
+                      borderColor: '#1e40af',
+                      backgroundColor: 'rgba(30, 58, 138, 0.1)'
                     }
                   }}
                 >
-                  צור קשר
+                  {t('contact.title')}
                 </Button>
               </Box>
             </Paper>
-          </motion.div>
+        </motion.div>
         </Box>
       </Container>
     </Box>

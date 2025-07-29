@@ -1,49 +1,112 @@
 {
-    "languageSwitch": "Español",
-    "hero": {
-        "greeting": "Hola, soy",
-        "name": "Relaya Arlet",
-        "role": "Desarrolladora Full-Stack",
-        "description": "Soy desarrolladora de sitios web y sistemas Full-Stack especializada en JavaScript, React, TypeScript y Node.js. Tengo experiencia en construir soluciones digitales inteligentes e innovadoras — desde sitios web responsivos hasta aplicaciones avanzadas e integraciones con servicios de terceros. Mi visión es crear productos con una experiencia de usuario fluida, rendimiento excepcional y compatibilidad completa con motores de búsqueda (SEO).",
-        "cta": "Contáctame"
+  "languageSwitch": "Español",
+  "header": {
+    "home": "Inicio",
+    "about": "Sobre Mí",
+    "skills": "Habilidades",
+    "projects": "Proyectos",
+    "contact": "Contacto",
+    "blog": "Blog",
+    "booking": "Reservar Cita",
+    "services": "Servicios"
+  },
+  "hero": {
+    "greeting": "Hola, soy",
+    "name": "Relaya Arlet",
+    "role": "Desarrolladora Full-Stack Avanzada",
+    "description": "Soy desarrolladora de sitios web y sistemas Full-Stack especializada en JavaScript, React, TypeScript y Node.js. Tengo experiencia en construir soluciones digitales inteligentes e innovadoras — desde sitios web responsivos hasta aplicaciones avanzadas e integraciones con servicios de terceros. Mi visión es crear productos con una experiencia de usuario fluida, rendimiento excepcional y compatibilidad completa con motores de búsqueda (SEO).",
+    "cta": "Contáctame"
+  },
+  "about": {
+    "title": "Sobre Mí",
+    "content": "Desarrolladora de sistemas y sitios web inteligentes especializada en las tecnologías líderes en el mundo del desarrollo — JavaScript, React, TypeScript, Node.js, WordPress y Firebase. Construyo soluciones digitales personalizadas que conectan tecnología avanzada, diseño preciso y experiencia de usuario fluida.",
+    "aboutMe": "Un poco sobre mí",
+    "aboutMeContent": "Desarrolladora de sistemas y sitios web inteligentes especializada en las tecnologías líderes en el mundo del desarrollo — JavaScript, React, TypeScript, Node.js, WordPress y Firebase. Construyo soluciones digitales personalizadas que conectan tecnología avanzada, diseño preciso y experiencia de usuario fluida. Acompaño empresas, emprendedores y proyectos especiales desde la etapa de idea hasta el lanzamiento exitoso — con infraestructura sólida, optimización SEO y adaptación completa a móvil y escritorio.",
+    "services": "Mis Servicios",
+    "servicesList": [
+      "Desarrollo de sitios web corporativos, tiendas, blogs y sitios de portafolio",
+      "Desarrollo de sistemas complejos con Firebase, MongoDB, Express y AI",
+      "Construcción de componentes personalizados en React y TypeScript",
+      "Desarrollo de plugins/plantillas personalizadas para WordPress",
+      "Integración de sistemas de pago, CRM, APIs y Webhooks",
+      "Optimización SEO, velocidad y accesibilidad (WCAG)",
+      "Diseño UX/UI meticuloso basado en investigación y comportamiento del usuario"
+    ],
+    "whyWorkWithMe": "¿Por qué trabajar conmigo?",
+    "whyWorkWithMeList": [
+      "Combinación de tecnología avanzada, diseño experiencial y pensamiento práctico",
+      "Experiencia probada en desarrollo de sistemas inteligentes con resultados en el campo",
+      "Acompañamiento personal, transparencia y comunicación a nivel de los ojos",
+      "Adaptación completa a móvil, accesibilidad y optimización SEO",
+      "Visión amplia – tanto como desarrolladora como consultora de producto y tecnología"
+    ],
+    "nextProject": "Tu próximo proyecto comienza aquí",
+    "nextProjectDescription": "Te invito a ponerte en contacto y descubrir cómo convertir una idea inteligente en realidad inteligente"
+  },
+  "skills": {
+    "title": "Mis Habilidades",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "databases": "Bases de Datos",
+    "tools": "Herramientas"
+  },
+  "projects": {
+    "title": "Mis Proyectos",
+    "viewProject": "Ver Proyecto",
+    "viewCode": "Ver Código",
+    "project1": {
+      "title": "Plataforma de Comercio Electrónico",
+      "description": "Solución de comercio electrónico completa con integración de pagos, autenticación de usuarios y panel de administración."
     },
-    "about": {
-        "title": "Sobre Mí",
-        "content": "Desarrolladora de sistemas y sitios web inteligentes especializada en las tecnologías líderes en el mundo del desarrollo — JavaScript, React, TypeScript, Node.js, WordPress y Firebase. Construyo soluciones digitales personalizadas que conectan tecnología avanzada, diseño preciso y experiencia de usuario fluida."
+    "project2": {
+      "title": "Aplicación de Gestión de Tareas",
+      "description": "Aplicación de gestión de tareas responsiva con funcionalidad de arrastrar y soltar y actualizaciones en tiempo real."
     },
-    "skills": {
-        "title": "Mis Habilidades",
-        "frontend": "Frontend",
-        "backend": "Backend",
-        "databases": "Bases de Datos",
-        "tools": "Herramientas"
-    },
-    "projects": {
-        "title": "Mis Proyectos"
-    },
-    "contact": {
-        "title": "Contáctame",
-        "contactMethods": "Métodos de Contacto",
-        "email": "Email",
-        "phone": "Teléfono",
-        "whatsapp": "WhatsApp",
-        "sendMessage": "Enviar Mensaje",
-        "workingHours": "Horario de Trabajo",
-        "weekdays": "Domingo - Jueves: 9:00 - 18:00",
-        "friday": "Viernes: 9:00 - 14:00",
-        "successMessage": "¡Mensaje enviado con éxito!"
-    },
-    "header": {
-        "home": "Inicio",
-        "about": "Sobre Mí",
-        "skills": "Habilidades",
-        "projects": "Proyectos",
-        "contact": "Contacto",
-        "blog": "Blog",
-        "booking": "Reserva",
-        "services": "Servicios"
-    },
-    "footer": {
-        "rights": "Todos los derechos reservados"
+    "project3": {
+      "title": "Sitio Web de Portafolio",
+      "description": "Plantilla de portafolio personalizable para desarrolladores para mostrar su trabajo y habilidades."
     }
+  },
+  "contact": {
+    "title": "Contáctame",
+    "contactMethods": "Métodos de Contacto",
+    "email": "Email",
+    "phone": "Teléfono",
+    "whatsapp": "WhatsApp",
+    "sendMessage": "Enviar Mensaje",
+    "workingHours": "Horario de Trabajo",
+    "weekdays": "Domingo - Jueves: 9:00 - 18:00",
+    "friday": "Viernes: 9:00 - 14:00",
+    "nameLabel": "Tu Nombre",
+    "emailLabel": "Tu Email",
+    "messageLabel": "Tu Mensaje",
+    "submitButton": "Enviar Mensaje",
+    "successMessage": "¡Mensaje enviado con éxito!",
+    "errorMessage": "Error al enviar mensaje. Por favor intenta de nuevo."
+  },
+  "footer": {
+    "rights": "Todos los derechos reservados",
+    "madeWith": "Hecho con ❤️ usando React"
+  },
+  "direction": "ltr",
+  "language": "Español",
+  "languageSwitch": "English",
+  "accessibility": {
+    "title": "Configuración de Accesibilidad",
+    "description": "Configuración de accesibilidad para personalizar el sitio web según tus necesidades",
+    "openSettings": "Abrir configuración de accesibilidad",
+    "close": "Cerrar",
+    "fontSize": "Tamaño de Fuente",
+    "decreaseFont": "Disminuir tamaño de fuente",
+    "increaseFont": "Aumentar tamaño de fuente",
+    "highContrast": "Alto Contraste",
+    "reducedMotion": "Movimiento Reducido",
+    "focusIndicator": "Indicador de Enfoque",
+    "cursorSize": "Tamaño del Cursor",
+    "normal": "Normal",
+    "large": "Grande",
+    "on": "Encendido",
+    "off": "Apagado",
+    "resetSettings": "Restablecer Configuración"
+  }
 }

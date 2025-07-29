@@ -21,6 +21,7 @@ export default defineConfig(({ mode }) => ({
   },
   build: {
     // אופטימיזציה לבנייה
+    outDir: 'dist',
     target: 'es2015',
     minify: 'esbuild', // שימוש ב-esbuild במקום terser
     rollupOptions: {

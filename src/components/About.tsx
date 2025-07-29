@@ -172,20 +172,17 @@ const About = () => {
                   sx={{
                     fontWeight: 'bold',
                     mb: 2,
-                    color: 'primary.main',
+                    color: '#1e3a8a', // כחול כהה כמו ביתר
                     fontStyle: 'italic',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: 1
+                    textAlign: 'right'
                   }}
                 >
-                  🚀 {t('about.whyWorkWithMe')}
+                  {t('about.whyWorkWithMe')}
                 </Typography>
                 <Stack spacing={2}>
                   {(t('about.whyWorkWithMeList', { returnObjects: true }) as string[]).map((item: string, index: number) => (
-                    <Box key={index} sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                      <Typography variant="h6">💡</Typography>
-                      <Typography variant="body2" sx={{ fontWeight: 'bold' }}>
+                    <Box key={index} sx={{ display: 'flex', alignItems: 'center', gap: 1, justifyContent: 'flex-end' }}>
+                      <Typography variant="body2" sx={{ fontWeight: 'bold', textAlign: 'right' }}>
                         {item}
                       </Typography>
                     </Box>

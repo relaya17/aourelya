@@ -100,19 +100,19 @@ const About = () => {
             <Stack spacing={4} sx={{ width: '100%' }}>
               {/* קצת עליי */}
               <Paper
-                elevation={3}
+                elevation={2}
                 sx={{
                   p: { xs: 3, sm: 4 },
                   borderRadius: 3,
                   textAlign: 'right',
                   direction: 'rtl',
                   backgroundColor: 'rgba(255, 255, 255, 0.95)',
-                  border: 2,
-                  borderColor: '#1e3a8a',
+                  boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
                   '&:hover': {
-                    elevation: 6,
+                    elevation: 4,
                     transform: 'translateY(-2px)',
-                    transition: 'all 0.3s ease'
+                    transition: 'all 0.3s ease',
+                    boxShadow: '0 8px 24px rgba(0, 0, 0, 0.15)'
                   }
                 }}
               >
@@ -134,6 +134,7 @@ const About = () => {
                     lineHeight: 1.8,
                     color: 'text.secondary',
                     textAlign: 'right',
+                    fontWeight: 'normal',
                     fontFamily: i18n.language === 'he' 
                       ? 'Rubik, Arial, sans-serif' 
                       : 'Inter, Arial, sans-serif'
@@ -145,19 +146,19 @@ const About = () => {
 
               {/* השירותים שלי */}
               <Paper
-                elevation={3}
+                elevation={2}
                 sx={{
                   p: { xs: 3, sm: 4 },
                   borderRadius: 3,
                   textAlign: 'right',
                   direction: 'rtl',
                   backgroundColor: 'rgba(255, 255, 255, 0.95)',
-                  border: 2,
-                  borderColor: '#1e3a8a',
+                  boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
                   '&:hover': {
-                    elevation: 6,
+                    elevation: 4,
                     transform: 'translateY(-2px)',
-                    transition: 'all 0.3s ease'
+                    transition: 'all 0.3s ease',
+                    boxShadow: '0 8px 24px rgba(0, 0, 0, 0.15)'
                   }
                 }}
               >
@@ -182,6 +183,7 @@ const About = () => {
                           variant: 'body2',
                           textAlign: 'right',
                           color: 'text.secondary',
+                          fontWeight: 'normal',
                           fontFamily: i18n.language === 'he' 
                             ? 'Rubik, Arial, sans-serif' 
                             : 'Inter, Arial, sans-serif'
@@ -195,19 +197,19 @@ const About = () => {
 
               {/* למה לעבוד איתי */}
               <Paper
-                elevation={3}
+                elevation={2}
                 sx={{
                   p: { xs: 3, sm: 4 },
                   borderRadius: 3,
                   textAlign: 'right',
                   direction: 'rtl',
                   backgroundColor: 'rgba(255, 255, 255, 0.95)',
-                  border: 2,
-                  borderColor: '#1e3a8a',
+                  boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
                   '&:hover': {
-                    elevation: 6,
+                    elevation: 4,
                     transform: 'translateY(-2px)',
-                    transition: 'all 0.3s ease'
+                    transition: 'all 0.3s ease',
+                    boxShadow: '0 8px 24px rgba(0, 0, 0, 0.15)'
                   }
                 }}
               >
@@ -227,7 +229,7 @@ const About = () => {
                   {(t('about.whyWorkWithMeList', { returnObjects: true }) as string[]).map((item: string, index: number) => (
                     <Box key={index} sx={{ display: 'flex', alignItems: 'center', gap: 1, justifyContent: 'flex-end' }}>
                       <Typography variant="body2" sx={{ 
-                        fontWeight: 'bold', 
+                        fontWeight: 'normal', 
                         textAlign: 'right',
                         color: 'text.secondary',
                         fontFamily: i18n.language === 'he' 
@@ -243,18 +245,18 @@ const About = () => {
 
               {/* צור קשר */}
               <Paper
-                elevation={3}
+                elevation={2}
                 sx={{
                   p: { xs: 3, sm: 4 },
                   borderRadius: 3,
                   textAlign: 'center',
                   backgroundColor: 'rgba(255, 255, 255, 0.95)',
-                  border: 2,
-                  borderColor: '#1e3a8a',
+                  boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
                   '&:hover': {
-                    elevation: 6,
+                    elevation: 4,
                     transform: 'translateY(-2px)',
-                    transition: 'all 0.3s ease'
+                    transition: 'all 0.3s ease',
+                    boxShadow: '0 8px 24px rgba(0, 0, 0, 0.15)'
                   }
                 }}
               >
@@ -285,6 +287,7 @@ const About = () => {
                     mb: 2, 
                     px: 2,
                     color: 'text.secondary',
+                    fontWeight: 'normal',
                     fontFamily: i18n.language === 'he' 
                       ? 'Rubik, Arial, sans-serif' 
                       : 'Inter, Arial, sans-serif'

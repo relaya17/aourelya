@@ -104,8 +104,8 @@ const About = () => {
                 sx={{
                   p: { xs: 3, sm: 4 },
                   borderRadius: 3,
-                  textAlign: 'right',
-                  direction: 'rtl',
+                  textAlign: i18n.language === 'he' ? 'right' : 'left',
+                  direction: i18n.language === 'he' ? 'rtl' : 'ltr',
                   backgroundColor: 'rgba(255, 255, 255, 0.95)',
                   boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
                   '&:hover': {
@@ -123,7 +123,7 @@ const About = () => {
                     mb: 2,
                     color: '#1e3a8a', // כחול כהה כמו ביתר
                     fontStyle: 'italic',
-                    textAlign: 'right'
+                    textAlign: i18n.language === 'he' ? 'right' : 'center'
                   }}
                 >
                   {t('about.aboutMe')}
@@ -133,7 +133,7 @@ const About = () => {
                   sx={{ 
                     lineHeight: 1.8,
                     color: 'text.secondary',
-                    textAlign: 'right',
+                    textAlign: i18n.language === 'he' ? 'right' : 'left',
                     fontWeight: 'normal',
                     fontSize: '1rem',
                     fontFamily: 'Segoe UI, Tahoma, Geneva, Verdana, sans-serif'
@@ -149,8 +149,8 @@ const About = () => {
                 sx={{
                   p: { xs: 3, sm: 4 },
                   borderRadius: 3,
-                  textAlign: 'right',
-                  direction: 'rtl',
+                  textAlign: i18n.language === 'he' ? 'right' : 'left',
+                  direction: i18n.language === 'he' ? 'rtl' : 'ltr',
                   backgroundColor: 'rgba(255, 255, 255, 0.95)',
                   boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
                   '&:hover': {
@@ -168,7 +168,7 @@ const About = () => {
                     mb: 2,
                     color: '#1e3a8a', // כחול כהה כמו ביתר
                     fontStyle: 'italic',
-                    textAlign: 'right'
+                    textAlign: i18n.language === 'he' ? 'right' : 'center'
                   }}
                 >
                   {t('about.services')}
@@ -216,8 +216,8 @@ const About = () => {
                 sx={{
                   p: { xs: 3, sm: 4 },
                   borderRadius: 3,
-                  textAlign: 'right',
-                  direction: 'rtl',
+                  textAlign: i18n.language === 'he' ? 'right' : 'left',
+                  direction: i18n.language === 'he' ? 'rtl' : 'ltr',
                   backgroundColor: 'rgba(255, 255, 255, 0.95)',
                   boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
                   '&:hover': {
@@ -235,17 +235,22 @@ const About = () => {
                     mb: 2,
                     color: '#1e3a8a', // כחול כהה כמו ביתר
                     fontStyle: 'italic',
-                    textAlign: 'right'
+                    textAlign: i18n.language === 'he' ? 'right' : 'center'
                   }}
                 >
                   {t('about.whyWorkWithMe')}
                 </Typography>
                 <Stack spacing={2}>
                   {(t('about.whyWorkWithMeList', { returnObjects: true }) as string[]).map((item: string, index: number) => (
-                    <Box key={index} sx={{ display: 'flex', alignItems: 'center', gap: 1, justifyContent: 'flex-end' }}>
+                    <Box key={index} sx={{ 
+                      display: 'flex', 
+                      alignItems: 'center', 
+                      gap: 1, 
+                      justifyContent: i18n.language === 'he' ? 'flex-end' : 'flex-start' 
+                    }}>
                       <Typography variant="body1" sx={{ 
                         fontWeight: 'normal', 
-                        textAlign: 'right',
+                        textAlign: i18n.language === 'he' ? 'right' : 'left',
                         color: 'text.secondary',
                         fontSize: '1rem',
                         fontFamily: 'Segoe UI, Tahoma, Geneva, Verdana, sans-serif'

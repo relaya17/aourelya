@@ -2,12 +2,28 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
+import {
+  AppBar,
+  Toolbar,
+  Button,
+  IconButton,
+  Drawer,
+  List,
+  ListItem,
+  ListItemText,
+  Box,
+  Typography,
+  useTheme,
+  useMediaQuery
+} from '@mui/material';
+import { Menu as MenuIcon, Language as LanguageIcon } from '@mui/icons-material';
 
 const Navbar = () => {
   const { t, i18n } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
   const toggleLanguage = () => {
     const newLang = i18n.language === 'en' ? 'he' : 'en';
@@ -36,87 +52,123 @@ const Navbar = () => {
     { key: 'projects', href: '#projects' },
     { key: 'contact', href: '#contact' },
     { key: 'blog', href: '#blog' },
-    { key: 'booking', href: '/booking' }, // Assuming booking is a separate page
+    { key: 'booking', href: '/booking' },
     { key: 'services', href: '#services' },
   ];
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-background/90 backdrop-blur-md shadow-md' : ''}`}>
-      <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-14 sm:h-16">
-          <div className="flex items-center">
-            <a href="#" className="text-lg sm:text-xl font-bold text-primary">
-             Aurelia
-            </a>
-          </div>
+    <>
+      <AppBar 
+        position="fixed" 
+        elevation={scrolled ? 4 : 0}
+        sx={{
+          backgroundColor: scrolled ? 'rgba(255, 255, 255, 0.9)' : 'transparent',
+          backdropFilter: scrolled ? 'blur(10px)' : 'none',
+          transition: 'all 0.3s ease',
+        }}
+      >
+        <Toolbar sx={{ justifyContent: 'space-between' }}>
+          <Typography 
+            variant="h6" 
+            component="a" 
+            href="#" 
+            sx={{ 
+              textDecoration: 'none', 
+              color: 'primary.main',
+              fontWeight: 'bold'
+            }}
+          >
+            Aurelia
+          </Typography>
           
           {/* Desktop Navigation */}
-          <div className="hidden md:block">
-            <div className="flex items-center space-x-2 lg:space-x-4 rtl:space-x-reverse">
-              {navItems.map((item) => (
-                <a
-                  key={item.key}
-                  href={item.href}
-                  className="text-foreground hover:text-primary px-2 lg:px-3 py-2 rounded-md text-sm font-medium transition-colors"
-                >
-                  {t(`header.${item.key}`)}
-                </a>
-              ))}
-              
-              <button
-                onClick={toggleLanguage}
-                className="ms-2 lg:ms-4 bg-primary text-primary-foreground px-2 lg:px-3 py-1 rounded-md text-sm font-medium transition-colors hover:bg-primary/90"
-              >
-                {t('languageSwitch')}
-              </button>
-            </div>
-          </div>
-          
-          {/* Mobile Navigation Button */}
-          <div className="md:hidden flex items-center">
-            <button
-              onClick={toggleLanguage}
-              className="me-2 text-foreground hover:text-primary text-sm"
-            >
-              {t('languageSwitch')}
-            </button>
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="text-foreground hover:text-primary p-1 sm:p-2"
-            >
-              {isOpen ? (
-                <X className="h-5 w-5 sm:h-6 sm:w-6" />
-              ) : (
-                <Menu className="h-5 w-5 sm:h-6 sm:w-6" />
-              )}
-            </button>
-          </div>
-        </div>
-      </div>
-      
-      {/* Mobile Navigation Menu */}
-      {isOpen && (
-        <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -10 }}
-          className="md:hidden bg-background/95 backdrop-blur-md shadow-lg"
-        >
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+          <Box sx={{ display: { xs: 'none', md: 'flex' }, alignItems: 'center', gap: 2 }}>
             {navItems.map((item) => (
-              <a
+              <Button
                 key={item.key}
                 href={item.href}
-                onClick={() => setIsOpen(false)}
-                className="block text-foreground hover:text-primary px-3 py-2 rounded-md text-sm sm:text-base font-medium"
+                color="inherit"
+                sx={{ 
+                  textTransform: 'none',
+                  '&:hover': { color: 'primary.main' }
+                }}
               >
                 {t(`header.${item.key}`)}
-              </a>
+              </Button>
             ))}
-          </div>
-        </motion.div>
-      )}
-    </nav>
+            
+            <Button
+              onClick={toggleLanguage}
+              variant="contained"
+              startIcon={<LanguageIcon />}
+              size="small"
+              sx={{ ml: 2 }}
+            >
+              {t('languageSwitch')}
+            </Button>
+          </Box>
+          
+          {/* Mobile Navigation Button */}
+          <Box sx={{ display: { xs: 'flex', md: 'none' }, alignItems: 'center', gap: 1 }}>
+            <IconButton
+              onClick={toggleLanguage}
+              color="inherit"
+              size="small"
+            >
+              <LanguageIcon />
+            </IconButton>
+            <IconButton
+              onClick={() => setIsOpen(!isOpen)}
+              color="inherit"
+            >
+              <MenuIcon />
+            </IconButton>
+          </Box>
+        </Toolbar>
+      </AppBar>
+      
+      {/* Mobile Navigation Drawer */}
+      <Drawer
+        anchor="top"
+        open={isOpen}
+        onClose={() => setIsOpen(false)}
+        sx={{
+          display: { xs: 'block', md: 'none' },
+          '& .MuiDrawer-paper': {
+            top: '64px',
+            backgroundColor: 'rgba(255, 255, 255, 0.95)',
+            backdropFilter: 'blur(10px)',
+          }
+        }}
+      >
+        <List sx={{ pt: 1, pb: 3 }}>
+          {navItems.map((item) => (
+            <ListItem 
+              key={item.key}
+              component="a"
+              href={item.href}
+              onClick={() => setIsOpen(false)}
+              sx={{ 
+                textDecoration: 'none',
+                color: 'inherit',
+                '&:hover': { backgroundColor: 'action.hover' }
+              }}
+            >
+              <ListItemText 
+                primary={t(`header.${item.key}`)}
+                primaryTypographyProps={{ 
+                  variant: 'body1',
+                  fontWeight: 'medium'
+                }}
+              />
+            </ListItem>
+          ))}
+        </List>
+      </Drawer>
+      
+      {/* Toolbar spacer */}
+      <Toolbar />
+    </>
   );
 };
 

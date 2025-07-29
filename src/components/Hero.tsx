@@ -2,94 +2,181 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import {
+  Container,
+  Box,
+  Typography,
+  Button,
+  Avatar,
+  Paper,
+  Stack
+} from '@mui/material';
 
 const Hero = () => {
   const { t } = useTranslation();
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
 
   return (
-    <section
+    <Box
+      component="section"
       id="home"
       role="region"
       aria-labelledby="hero-heading"
-      className="py-12 sm:py-16 md:py-20 lg:py-32"
+      sx={{
+        py: { xs: 6, sm: 8, md: 10, lg: 16 },
+        minHeight: '100vh',
+        display: 'flex',
+        alignItems: 'center'
+      }}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row items-center justify-between">
-
+      <Container maxWidth="lg">
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: { xs: 'column', md: 'row' },
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: 4
+          }}
+        >
           <motion.div
             ref={ref}
             initial={{ opacity: 0, x: -50 }}
             animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
             transition={{ duration: 0.5 }}
-            className="w-full md:w-1/2 mb-8 md:mb-0"
+            style={{ width: '100%', maxWidth: '600px' }}
           >
-            <div className="bg-background rounded-2xl shadow-lg p-4 sm:p-6 md:p-8">
-
+            <Paper
+              elevation={3}
+              sx={{
+                p: { xs: 3, sm: 4, md: 5 },
+                borderRadius: 3,
+                textAlign: 'center',
+                backgroundColor: 'background.paper'
+              }}
+            >
               {/* Greeting & Name */}
-              <p
-                className="text-base sm:text-lg md:text-xl text-primary font-semibold mb-2 text-center"
-                aria-live="polite"
+              <Typography
+                variant="h6"
+                color="primary"
+                sx={{ 
+                  fontWeight: 600, 
+                  mb: 1,
+                  fontSize: { xs: '1rem', sm: '1.125rem', md: '1.25rem' }
+                }}
               >
                 {t('hero.greeting')}
-              </p>
-              <h1
+              </Typography>
+              
+              <Typography
                 id="hero-heading"
-                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-center"
+                variant="h2"
+                component="h1"
+                sx={{
+                  fontWeight: 'bold',
+                  mb: 2,
+                  fontSize: { xs: '2.25rem', sm: '3rem', md: '3.75rem', lg: '4.5rem' }
+                }}
               >
                 {t('hero.name')}
-              </h1>
+              </Typography>
 
               {/* תמונה של ארלט */}
-              <img
+              <Avatar
                 src="/arlet.png"
                 alt="ארלט"
-                className="w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 rounded-full mx-auto mb-4 sm:mb-6 border-4 border-primary object-cover shadow-lg"
-                style={{ objectPosition: 'center 20%' }}
+                sx={{
+                  width: { xs: 128, sm: 144, md: 160 },
+                  height: { xs: 128, sm: 144, md: 160 },
+                  mx: 'auto',
+                  mb: { xs: 2, sm: 3 },
+                  border: 4,
+                  borderColor: 'primary.main',
+                  boxShadow: 3
+                }}
               />
 
               {/* Role & Description */}
-              <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold text-muted-foreground mb-4 sm:mb-6 text-center">
+              <Typography
+                variant="h4"
+                component="h2"
+                color="text.secondary"
+                sx={{
+                  fontWeight: 600,
+                  mb: { xs: 2, sm: 3 },
+                  fontSize: { xs: '1.125rem', sm: '1.25rem', md: '1.5rem', lg: '1.875rem' }
+                }}
+              >
                 {t('hero.role')}
-              </h2>
-              <p className="text-sm sm:text-base md:text-lg text-muted-foreground mb-6 sm:mb-8 max-w-md mx-auto text-center">
+              </Typography>
+              
+              <Typography
+                variant="body1"
+                color="text.secondary"
+                sx={{
+                  mb: { xs: 3, sm: 4 },
+                  maxWidth: 'md',
+                  mx: 'auto',
+                  fontSize: { xs: '0.875rem', sm: '1rem', md: '1.125rem' }
+                }}
+              >
                 {t('hero.description')}
-              </p>
+              </Typography>
 
               {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 rtl:space-x-reverse justify-center">
-                <motion.a
-                  href="#contact"
-                  role="button"
-                  aria-label={t('hero.cta')}
+              <Stack
+                direction={{ xs: 'column', sm: 'row' }}
+                spacing={2}
+                justifyContent="center"
+                sx={{ mt: 3 }}
+              >
+                <motion.div
                   initial={{ scale: 1 }}
                   whileHover={{ scale: 1.05 }}
                   transition={{ type: 'spring', stiffness: 300 }}
-                  className="bg-primary text-primary-foreground px-4 sm:px-6 py-2 sm:py-3 rounded-md font-medium hover:bg-primary/90 focus:outline-none focus:ring-4 focus:ring-primary/50 transition-colors text-center"
                 >
-                  {t('hero.cta')}
-                </motion.a>
-                <motion.a
-                  href="#projects"
-                  role="link"
-                  aria-label={t('projects.title')}
+                  <Button
+                    component="a"
+                    href="#contact"
+                    variant="contained"
+                    size="large"
+                    sx={{
+                      px: { xs: 3, sm: 4 },
+                      py: { xs: 1.5, sm: 2 },
+                      fontSize: { xs: '0.875rem', sm: '1rem' },
+                      textTransform: 'none'
+                    }}
+                  >
+                    {t('hero.cta')}
+                  </Button>
+                </motion.div>
+                
+                <motion.div
                   initial={{ scale: 1 }}
                   whileHover={{ scale: 1.05 }}
                   transition={{ type: 'spring', stiffness: 300, delay: 0.1 }}
-                  className="border border-primary text-primary px-4 sm:px-6 py-2 sm:py-3 rounded-md font-medium hover:bg-primary/10 focus:outline-none focus:ring-4 focus:ring-primary/50 transition-colors text-center"
                 >
-                  {t('projects.title')}
-                </motion.a>
-              </div>
-            </div>
+                  <Button
+                    component="a"
+                    href="#projects"
+                    variant="outlined"
+                    size="large"
+                    sx={{
+                      px: { xs: 3, sm: 4 },
+                      py: { xs: 1.5, sm: 2 },
+                      fontSize: { xs: '0.875rem', sm: '1rem' },
+                      textTransform: 'none'
+                    }}
+                  >
+                    {t('projects.title')}
+                  </Button>
+                </motion.div>
+              </Stack>
+            </Paper>
           </motion.div>
-
-          {/* תמונה של ארלט - גדולה, ריבועית, בצד */}
-          {/* תמונה זו הוסרה לחלוטין */}
-
-        </div>
-      </div>
-    </section>
+        </Box>
+      </Container>
+    </Box>
   );
 };
 

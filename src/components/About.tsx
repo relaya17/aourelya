@@ -136,9 +136,7 @@ const About = () => {
                     textAlign: 'right',
                     fontWeight: 'normal',
                     fontSize: '1rem',
-                    fontFamily: i18n.language === 'he' 
-                      ? 'Rubik, Arial, sans-serif' 
-                      : 'Inter, Arial, sans-serif'
+                    fontFamily: 'Segoe UI, Tahoma, Geneva, Verdana, sans-serif'
                   }}
                 >
                   {t('about.aboutMeContent')}
@@ -186,9 +184,7 @@ const About = () => {
                           color: 'text.secondary',
                           fontWeight: 'normal',
                           fontSize: '1rem',
-                          fontFamily: i18n.language === 'he' 
-                            ? 'Rubik, Arial, sans-serif' 
-                            : 'Inter, Arial, sans-serif'
+                          fontFamily: 'Segoe UI, Tahoma, Geneva, Verdana, sans-serif'
                         }}
                         sx={{ textAlign: 'right' }}
                       />
@@ -235,9 +231,7 @@ const About = () => {
                         textAlign: 'right',
                         color: 'text.secondary',
                         fontSize: '1rem',
-                        fontFamily: i18n.language === 'he' 
-                          ? 'Rubik, Arial, sans-serif' 
-                          : 'Inter, Arial, sans-serif'
+                        fontFamily: 'Segoe UI, Tahoma, Geneva, Verdana, sans-serif'
                       }}>
                         {item}
                       </Typography>
@@ -292,9 +286,7 @@ const About = () => {
                     color: 'text.secondary',
                     fontWeight: 'normal',
                     fontSize: '1rem',
-                    fontFamily: i18n.language === 'he' 
-                      ? 'Rubik, Arial, sans-serif' 
-                      : 'Inter, Arial, sans-serif'
+                    fontFamily: 'Segoe UI, Tahoma, Geneva, Verdana, sans-serif'
                   }}
                 >
                   {t('about.nextProjectDescription')}

@@ -269,13 +269,28 @@ const About = () => {
                   p: { xs: 3, sm: 4 },
                   borderRadius: 3,
                   textAlign: 'center',
-                  backgroundColor: 'rgba(255, 255, 255, 0.95)',
+                  backgroundImage: 'url(/Designer3.png)',
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  backgroundRepeat: 'no-repeat',
+                  position: 'relative',
                   boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
                   '&:hover': {
                     elevation: 4,
                     transform: 'translateY(-2px)',
                     transition: 'all 0.3s ease',
                     boxShadow: '0 8px 24px rgba(0, 0, 0, 0.15)'
+                  },
+                  '&::before': {
+                    content: '""',
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    bottom: 0,
+                    backgroundColor: 'rgba(255, 255, 255, 0.9)',
+                    borderRadius: 3,
+                    zIndex: 1
                   }
                 }}
               >
@@ -294,7 +309,9 @@ const About = () => {
                     py: { xs: 1, sm: 1.5, md: 2 },
                     borderRadius: 2,
                     borderBottom: 4,
-                    borderColor: '#1e3a8a' // כחול כהה
+                    borderColor: '#1e3a8a', // כחול כהה
+                    position: 'relative',
+                    zIndex: 2
                   }}
                 >
                   {t('about.nextProject')}
@@ -308,7 +325,9 @@ const About = () => {
                     color: 'text.secondary',
                     fontWeight: 'normal',
                     fontSize: '1rem',
-                    fontFamily: 'Segoe UI, Tahoma, Geneva, Verdana, sans-serif'
+                    fontFamily: 'Segoe UI, Tahoma, Geneva, Verdana, sans-serif',
+                    position: 'relative',
+                    zIndex: 2
                   }}
                 >
                   {t('about.nextProjectDescription')}
@@ -327,6 +346,8 @@ const About = () => {
                     borderWidth: 2,
                     borderColor: '#1e3a8a', // כחול כהה
                     color: '#1e3a8a', // כחול כהה
+                    position: 'relative',
+                    zIndex: 2,
                     '&:hover': {
                       borderWidth: 2,
                       borderColor: '#1e40af',

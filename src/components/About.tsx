@@ -145,13 +145,10 @@ const About = () => {
                     mb: 2,
                     color: 'primary.main',
                     fontStyle: 'italic',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: 1,
-                    justifyContent: 'flex-end'
+                    textAlign: 'right'
                   }}
                 >
-                  💼 השירותים שלי
+                  השירותים שלי
                 </Typography>
                 <List sx={{ py: 0 }}>
                   {[

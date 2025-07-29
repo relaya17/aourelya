@@ -132,12 +132,12 @@ const Contact = () => {
                         </Typography>
                         <Typography
                           component="a"
-                          href="mailto:contact@aurelia.dev"
+                          href="mailto:arleettt1@gmail.com"
                           variant="body2"
                           color="primary"
                           sx={{ textDecoration: 'none', '&:hover': { textDecoration: 'underline' } }}
                         >
-                          contact@aurelia.dev
+                          arleettt1@gmail.com
                         </Typography>
                       </Box>
                     </Box>
@@ -151,12 +151,12 @@ const Contact = () => {
                         </Typography>
                         <Typography
                           component="a"
-                          href="tel:+972501234567"
+                          href="tel:+972528747305"
                           variant="body2"
                           color="primary"
                           sx={{ textDecoration: 'none', '&:hover': { textDecoration: 'underline' } }}
                         >
-                          +972-50-123-4567
+                          +972-52-874-7305
                         </Typography>
                       </Box>
                     </Box>
@@ -170,14 +170,14 @@ const Contact = () => {
                         </Typography>
                         <Typography
                           component="a"
-                          href="https://wa.me/972501234567"
+                          href="https://wa.me/972528747305"
                           target="_blank"
                           rel="noopener noreferrer"
                           variant="body2"
                           color="success.main"
                           sx={{ textDecoration: 'none', '&:hover': { textDecoration: 'underline' } }}
                         >
-                          +972-50-123-4567
+                          +972-52-874-7305
                         </Typography>
                       </Box>
                     </Box>

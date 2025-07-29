@@ -132,7 +132,7 @@ const About = () => {
                   variant="body1"
                   sx={{ 
                     lineHeight: 1.8,
-                    color: '#1e3a8a', // כחול כהה כמו ביתר
+                    color: 'text.secondary',
                     textAlign: 'right',
                     fontFamily: i18n.language === 'he' 
                       ? 'Rubik, Arial, sans-serif' 
@@ -181,7 +181,7 @@ const About = () => {
                         primaryTypographyProps={{
                           variant: 'body2',
                           textAlign: 'right',
-                          color: '#1e3a8a', // כחול כהה כמו ביתר
+                          color: 'text.secondary',
                           fontFamily: i18n.language === 'he' 
                             ? 'Rubik, Arial, sans-serif' 
                             : 'Inter, Arial, sans-serif'
@@ -229,7 +229,7 @@ const About = () => {
                       <Typography variant="body2" sx={{ 
                         fontWeight: 'bold', 
                         textAlign: 'right',
-                        color: '#1e3a8a', // כחול כהה כמו ביתר
+                        color: 'text.secondary',
                         fontFamily: i18n.language === 'he' 
                           ? 'Rubik, Arial, sans-serif' 
                           : 'Inter, Arial, sans-serif'
@@ -284,7 +284,7 @@ const About = () => {
                   sx={{ 
                     mb: 2, 
                     px: 2,
-                    color: '#1e3a8a', // כחול כהה כמו ביתר
+                    color: 'text.secondary',
                     fontFamily: i18n.language === 'he' 
                       ? 'Rubik, Arial, sans-serif' 
                       : 'Inter, Arial, sans-serif'

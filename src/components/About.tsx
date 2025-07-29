@@ -147,7 +147,8 @@ const About = () => {
                     fontStyle: 'italic',
                     display: 'flex',
                     alignItems: 'center',
-                    gap: 1
+                    gap: 1,
+                    justifyContent: 'flex-end'
                   }}
                 >
                   💼 השירותים שלי
@@ -162,13 +163,15 @@ const About = () => {
                     'אופטימיזציה ל־SEO, מהירות ונגישות (WCAG)',
                     'עיצוב UX/UI מוקפד מבוסס מחקר והתנהגות משתמשים'
                   ].map((service, index) => (
-                    <ListItem key={index} sx={{ py: 0.5 }}>
+                    <ListItem key={index} sx={{ py: 0.5, justifyContent: 'flex-end' }}>
                       <ListItemText
-                        primary={`✅ ${service}`}
+                        primary={service}
                         primaryTypographyProps={{
                           variant: 'body2',
-                          color: 'text.secondary'
+                          color: 'text.secondary',
+                          textAlign: 'right'
                         }}
+                        sx={{ textAlign: 'right' }}
                       />
                     </ListItem>
                   ))}

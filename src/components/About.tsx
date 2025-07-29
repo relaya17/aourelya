@@ -135,6 +135,7 @@ const About = () => {
                     color: 'text.secondary',
                     textAlign: 'right',
                     fontWeight: 'normal',
+                    fontSize: '1rem',
                     fontFamily: i18n.language === 'he' 
                       ? 'Rubik, Arial, sans-serif' 
                       : 'Inter, Arial, sans-serif'
@@ -180,10 +181,11 @@ const About = () => {
                       <ListItemText
                         primary={service}
                         primaryTypographyProps={{
-                          variant: 'body2',
+                          variant: 'body1',
                           textAlign: 'right',
                           color: 'text.secondary',
                           fontWeight: 'normal',
+                          fontSize: '1rem',
                           fontFamily: i18n.language === 'he' 
                             ? 'Rubik, Arial, sans-serif' 
                             : 'Inter, Arial, sans-serif'
@@ -228,10 +230,11 @@ const About = () => {
                 <Stack spacing={2}>
                   {(t('about.whyWorkWithMeList', { returnObjects: true }) as string[]).map((item: string, index: number) => (
                     <Box key={index} sx={{ display: 'flex', alignItems: 'center', gap: 1, justifyContent: 'flex-end' }}>
-                      <Typography variant="body2" sx={{ 
+                      <Typography variant="body1" sx={{ 
                         fontWeight: 'normal', 
                         textAlign: 'right',
                         color: 'text.secondary',
+                        fontSize: '1rem',
                         fontFamily: i18n.language === 'he' 
                           ? 'Rubik, Arial, sans-serif' 
                           : 'Inter, Arial, sans-serif'
@@ -288,6 +291,7 @@ const About = () => {
                     px: 2,
                     color: 'text.secondary',
                     fontWeight: 'normal',
+                    fontSize: '1rem',
                     fontFamily: i18n.language === 'he' 
                       ? 'Rubik, Arial, sans-serif' 
                       : 'Inter, Arial, sans-serif'

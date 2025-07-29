@@ -69,7 +69,8 @@ const About = () => {
                 fontWeight: 'bold',
                 mb: 2,
                 textAlign: 'center',
-                fontSize: { xs: '1.5rem', sm: '2rem', md: '2.5rem' }
+                fontSize: { xs: '1.5rem', sm: '2rem', md: '2.5rem' },
+                color: '#1e3a8a' // כחול כהה
               }}
             >
               {t('about.title')}

@@ -1,0 +1,49 @@
+{
+    "languageSwitch": "Español",
+    "hero": {
+        "greeting": "Hola, soy",
+        "name": "Relaya Arlet",
+        "role": "Desarrolladora Full-Stack",
+        "description": "Soy desarrolladora de sitios web y sistemas Full-Stack especializada en JavaScript, React, TypeScript y Node.js. Tengo experiencia en construir soluciones digitales inteligentes e innovadoras — desde sitios web responsivos hasta aplicaciones avanzadas e integraciones con servicios de terceros. Mi visión es crear productos con una experiencia de usuario fluida, rendimiento excepcional y compatibilidad completa con motores de búsqueda (SEO).",
+        "cta": "Contáctame"
+    },
+    "about": {
+        "title": "Sobre Mí",
+        "content": "Desarrolladora de sistemas y sitios web inteligentes especializada en las tecnologías líderes en el mundo del desarrollo — JavaScript, React, TypeScript, Node.js, WordPress y Firebase. Construyo soluciones digitales personalizadas que conectan tecnología avanzada, diseño preciso y experiencia de usuario fluida."
+    },
+    "skills": {
+        "title": "Mis Habilidades",
+        "frontend": "Frontend",
+        "backend": "Backend",
+        "databases": "Bases de Datos",
+        "tools": "Herramientas"
+    },
+    "projects": {
+        "title": "Mis Proyectos"
+    },
+    "contact": {
+        "title": "Contáctame",
+        "contactMethods": "Métodos de Contacto",
+        "email": "Email",
+        "phone": "Teléfono",
+        "whatsapp": "WhatsApp",
+        "sendMessage": "Enviar Mensaje",
+        "workingHours": "Horario de Trabajo",
+        "weekdays": "Domingo - Jueves: 9:00 - 18:00",
+        "friday": "Viernes: 9:00 - 14:00",
+        "successMessage": "¡Mensaje enviado con éxito!"
+    },
+    "header": {
+        "home": "Inicio",
+        "about": "Sobre Mí",
+        "skills": "Habilidades",
+        "projects": "Proyectos",
+        "contact": "Contacto",
+        "blog": "Blog",
+        "booking": "Reserva",
+        "services": "Servicios"
+    },
+    "footer": {
+        "rights": "Todos los derechos reservados"
+    }
+}

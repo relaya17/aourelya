@@ -4,6 +4,8 @@ import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import enTranslation from './locales/en/translation.json';
 import heTranslation from './locales/he/translation.json';
+import arTranslation from './locales/ar/translation.json';
+import esTranslation from './locales/es/translation.json';
 
 i18n
   .use(LanguageDetector)
@@ -16,7 +18,14 @@ i18n
       he: {
         translation: heTranslation,
       },
+      ar: {
+        translation: arTranslation,
+      },
+      es: {
+        translation: esTranslation,
+      },
     },
+    lng: 'en', // ברירת מחדל לאנגלית
     fallbackLng: 'en',
     interpolation: {
       escapeValue: false,
@@ -26,7 +35,7 @@ i18n
     },
     // אופטימיזציות ביצועים
     load: 'languageOnly',
-    preload: ['he', 'en'],
+    preload: ['en', 'he', 'ar', 'es'],
     detection: {
       order: ['localStorage', 'navigator'],
       caches: ['localStorage'],

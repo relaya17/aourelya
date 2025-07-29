@@ -58,11 +58,11 @@ const Hero = () => {
               {/* Greeting & Name */}
               <Typography
                 variant="h6"
-                color="primary"
                 sx={{ 
                   fontWeight: 600, 
                   mb: 1,
-                  fontSize: { xs: '1rem', sm: '1.125rem', md: '1.25rem' }
+                  fontSize: { xs: '1rem', sm: '1.125rem', md: '1.25rem' },
+                  color: '#1e3a8a' // כחול כהה
                 }}
               >
                 {t('hero.greeting')}
@@ -75,7 +75,8 @@ const Hero = () => {
                 sx={{
                   fontWeight: 'bold',
                   mb: 2,
-                  fontSize: { xs: '2.25rem', sm: '3rem', md: '3.75rem', lg: '4.5rem' }
+                  fontSize: { xs: '2.25rem', sm: '3rem', md: '3.75rem', lg: '4.5rem' },
+                  color: '#1e3a8a' // כחול כהה
                 }}
               >
                 {t('hero.name')}

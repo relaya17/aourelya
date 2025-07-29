@@ -14,7 +14,9 @@ import {
   Box,
   Typography,
   useTheme,
-  useMediaQuery
+  useMediaQuery,
+  Menu,
+  MenuItem
 } from '@mui/material';
 import { Menu as MenuIcon, Language as LanguageIcon } from '@mui/icons-material';
 
@@ -22,12 +24,26 @@ const Navbar = () => {
   const { t, i18n } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [languageMenuAnchor, setLanguageMenuAnchor] = useState<null | HTMLElement>(null);
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
-  const toggleLanguage = () => {
-    const newLang = i18n.language === 'en' ? 'he' : 'en';
-    i18n.changeLanguage(newLang);
+  const languages = [
+    { code: 'en', name: 'English', nativeName: 'English' },
+    { code: 'he', name: 'Hebrew', nativeName: 'עברית' },
+    { code: 'ar', name: 'Arabic', nativeName: 'العربية' },
+    { code: 'es', name: 'Spanish', nativeName: 'Español' }
+  ];
+
+  const handleLanguageChange = (languageCode: string) => {
+    i18n.changeLanguage(languageCode);
+    setLanguageMenuAnchor(null);
+  };
+
+  const getCurrentLanguageName = () => {
+    const currentLang = i18n.language;
+    const language = languages.find(lang => currentLang.startsWith(lang.code));
+    return language ? language.nativeName : 'English';
   };
 
   useEffect(() => {
@@ -60,22 +76,23 @@ const Navbar = () => {
     <>
       <AppBar 
         position="fixed" 
-        elevation={scrolled ? 4 : 0}
+        elevation={scrolled ? 8 : 2}
         sx={{
-          backgroundColor: scrolled ? 'rgba(255, 255, 255, 0.9)' : 'transparent',
-          backdropFilter: scrolled ? 'blur(10px)' : 'none',
+          backgroundColor: scrolled ? 'rgba(255, 255, 255, 0.95)' : 'rgba(255, 255, 255, 0.9)',
+          backdropFilter: 'blur(10px)',
           transition: 'all 0.3s ease',
+          boxShadow: scrolled ? '0 4px 20px rgba(0,0,0,0.1)' : '0 2px 10px rgba(0,0,0,0.05)',
         }}
       >
         <Toolbar sx={{ justifyContent: 'space-between' }}>
-          <Typography 
-            variant="h6" 
-            component="a" 
-            href="#" 
-            sx={{ 
-              textDecoration: 'none', 
-              color: 'primary.main',
-              fontWeight: 'bold'
+          <Typography
+            variant="h6"
+            component="div"
+            sx={{
+              flexGrow: 1,
+              color: '#1e3a8a', // כחול כהה
+              fontWeight: 'bold',
+              fontSize: { xs: '1.1rem', md: '1.25rem' }
             }}
           >
             Aurelia
@@ -90,7 +107,12 @@ const Navbar = () => {
                 color="inherit"
                 sx={{ 
                   textTransform: 'none',
-                  '&:hover': { color: 'primary.main' }
+                  color: '#1e3a8a', // כחול כהה
+                  fontWeight: 500,
+                  '&:hover': { 
+                    color: '#3b82f6',
+                    backgroundColor: 'rgba(59, 130, 246, 0.1)'
+                  }
                 }}
               >
                 {t(`header.${item.key}`)}
@@ -98,28 +120,103 @@ const Navbar = () => {
             ))}
             
             <Button
-              onClick={toggleLanguage}
+              onClick={(event) => setLanguageMenuAnchor(event.currentTarget)}
               variant="contained"
-              startIcon={<LanguageIcon />}
               size="small"
-              sx={{ ml: 2 }}
+              startIcon={<LanguageIcon />}
+              sx={{ 
+                ml: 2,
+                backgroundColor: '#1e3a8a', // כחול כהה
+                color: 'white',
+                '&:hover': {
+                  backgroundColor: '#1e40af'
+                }
+              }}
             >
-              {t('languageSwitch')}
+              {getCurrentLanguageName()}
             </Button>
+            
+            {/* Language Menu */}
+            <Menu
+              anchorEl={languageMenuAnchor}
+              open={Boolean(languageMenuAnchor)}
+              onClose={() => setLanguageMenuAnchor(null)}
+              sx={{
+                '& .MuiPaper-root': {
+                  mt: 1,
+                  minWidth: 120
+                }
+              }}
+            >
+              {languages.map((language) => (
+                <MenuItem
+                  key={language.code}
+                  onClick={() => handleLanguageChange(language.code)}
+                  selected={i18n.language.startsWith(language.code)}
+                  sx={{
+                    direction: language.code === 'he' || language.code === 'ar' ? 'rtl' : 'ltr',
+                    textAlign: language.code === 'he' || language.code === 'ar' ? 'right' : 'left'
+                  }}
+                >
+                  {language.nativeName}
+                </MenuItem>
+              ))}
+            </Menu>
           </Box>
           
           {/* Mobile Navigation Button */}
           <Box sx={{ display: { xs: 'flex', md: 'none' }, alignItems: 'center', gap: 1 }}>
-            <IconButton
-              onClick={toggleLanguage}
-              color="inherit"
+            <Button
+              onClick={(event) => setLanguageMenuAnchor(event.currentTarget)}
+              variant="outlined"
               size="small"
+              startIcon={<LanguageIcon />}
+              sx={{
+                color: '#1e3a8a', // כחול כהה
+                borderColor: '#1e3a8a',
+                '&:hover': {
+                  borderColor: '#1e40af',
+                  backgroundColor: 'rgba(30, 58, 138, 0.1)'
+                }
+              }}
             >
-              <LanguageIcon />
-            </IconButton>
+              {getCurrentLanguageName()}
+            </Button>
+            
+            {/* Language Menu for Mobile */}
+            <Menu
+              anchorEl={languageMenuAnchor}
+              open={Boolean(languageMenuAnchor)}
+              onClose={() => setLanguageMenuAnchor(null)}
+              sx={{
+                '& .MuiPaper-root': {
+                  mt: 1,
+                  minWidth: 120
+                }
+              }}
+            >
+              {languages.map((language) => (
+                <MenuItem
+                  key={language.code}
+                  onClick={() => handleLanguageChange(language.code)}
+                  selected={i18n.language.startsWith(language.code)}
+                  sx={{
+                    direction: language.code === 'he' || language.code === 'ar' ? 'rtl' : 'ltr',
+                    textAlign: language.code === 'he' || language.code === 'ar' ? 'right' : 'left'
+                  }}
+                >
+                  {language.nativeName}
+                </MenuItem>
+              ))}
+            </Menu>
             <IconButton
               onClick={() => setIsOpen(!isOpen)}
-              color="inherit"
+              sx={{
+                color: '#1e3a8a', // כחול כהה
+                '&:hover': {
+                  backgroundColor: 'rgba(30, 58, 138, 0.1)'
+                }
+              }}
             >
               <MenuIcon />
             </IconButton>
@@ -136,8 +233,9 @@ const Navbar = () => {
           display: { xs: 'block', md: 'none' },
           '& .MuiDrawer-paper': {
             top: '64px',
-            backgroundColor: 'rgba(255, 255, 255, 0.95)',
+            backgroundColor: 'rgba(255, 255, 255, 0.98)',
             backdropFilter: 'blur(10px)',
+            boxShadow: '0 4px 20px rgba(0,0,0,0.1)',
           }
         }}
       >
@@ -150,15 +248,18 @@ const Navbar = () => {
               onClick={() => setIsOpen(false)}
               sx={{ 
                 textDecoration: 'none',
-                color: 'inherit',
-                '&:hover': { backgroundColor: 'action.hover' }
+                color: '#1e3a8a', // כחול כהה
+                '&:hover': { 
+                  backgroundColor: 'rgba(30, 58, 138, 0.1)',
+                  color: '#1e40af'
+                }
               }}
             >
               <ListItemText 
                 primary={t(`header.${item.key}`)}
                 primaryTypographyProps={{ 
                   variant: 'body1',
-                  fontWeight: 'medium'
+                  fontWeight: 500
                 }}
               />
             </ListItem>

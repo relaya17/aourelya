@@ -68,7 +68,7 @@ const Skills = () => {
               component="h2"
               sx={{
                 fontWeight: 'bold',
-                color: 'primary.dark',
+                color: '#1e3a8a', // כחול כהה
                 mb: 2,
                 fontSize: { xs: '1.5rem', sm: '2rem', md: '2.5rem', lg: '3rem' },
                 fontStyle: 'italic',
@@ -78,13 +78,12 @@ const Skills = () => {
                 py: { xs: 1, sm: 1.5, md: 2 },
                 borderRadius: 2,
                 borderBottom: 4,
-                borderColor: 'primary.main',
+                borderColor: '#1e3a8a', // כחול כהה
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: 1
               }}
             >
-              <StarIcon sx={{ fontSize: { xs: '1.25rem', sm: '1.5rem', md: '1.875rem' } }} />
               {t('skills.title')}
             </Typography>
           </Box>

@@ -175,15 +175,20 @@ const About = () => {
                 </Typography>
                 <List sx={{ py: 0 }}>
                   {(t('about.servicesList', { returnObjects: true }) as string[]).map((service: string, index: number) => (
-                    <ListItem key={index} sx={{ py: 0.5, justifyContent: 'flex-end' }}>
+                    <ListItem key={index} sx={{ 
+                      py: 0.5, 
+                      justifyContent: i18n.language === 'he' ? 'flex-end' : 'flex-start',
+                      flexDirection: i18n.language === 'he' ? 'row' : 'row-reverse'
+                    }}>
                       <Typography
                         variant="body2"
                         sx={{
                           color: '#1e3a8a',
                           fontWeight: 'bold',
-                          mr: 1,
                           minWidth: '20px',
-                          textAlign: 'right'
+                          textAlign: i18n.language === 'he' ? 'right' : 'left',
+                          mr: i18n.language === 'he' ? 1 : 0,
+                          ml: i18n.language === 'he' ? 0 : 1
                         }}
                       >
                         {index + 1}.
@@ -192,13 +197,13 @@ const About = () => {
                         primary={service}
                         primaryTypographyProps={{
                           variant: 'body1',
-                          textAlign: 'right',
+                          textAlign: i18n.language === 'he' ? 'right' : 'left',
                           color: 'text.secondary',
                           fontWeight: 'normal',
                           fontSize: '1rem',
                           fontFamily: 'Segoe UI, Tahoma, Geneva, Verdana, sans-serif'
                         }}
-                        sx={{ textAlign: 'right' }}
+                        sx={{ textAlign: i18n.language === 'he' ? 'right' : 'left' }}
                       />
                     </ListItem>
                   ))}

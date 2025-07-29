@@ -1,0 +1,80 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18.x'
+        cache: 'npm'
+        
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Run tests
+      run: npm test
+      
+    - name: Build project
+      run: npm run build
+      
+    - name: Create Release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ github.ref }}
+        release_name: Release ${{ github.ref }}
+        draft: false
+        prerelease: false
+        body: |
+          ## 🚀 What's New
+          
+          ### ✨ New Features
+          - Add new features here
+          
+          ### 🐛 Bug Fixes
+          - Fix bugs here
+          
+          ### 📚 Documentation
+          - Update documentation here
+          
+          ### 🔧 Technical Improvements
+          - Technical improvements here
+          
+          ## 📦 Installation
+          
+          ```bash
+          npm install
+          npm run dev
+          ```
+          
+          ## 🔗 Links
+          
+          - [Live Demo](https://your-site.netlify.app)
+          - [Documentation](./README.md)
+          - [Contributing](./CONTRIBUTING.md)
+          
+          ## 🙏 Thanks
+          
+          Thanks to all contributors who helped with this release!
+          
+    - name: Upload build artifacts
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: ./dist
+        asset_name: build-files.zip
+        asset_content_type: application/zip

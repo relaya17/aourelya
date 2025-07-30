@@ -3,12 +3,10 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { useToast } from "@/components/ui/use-toast";
-import { Mail, Phone } from 'lucide-react';
+import { Email, Phone } from '@mui/icons-material';
 
 const Contact = () => {
   const { t } = useTranslation();
-  const { toast } = useToast();
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -33,9 +31,7 @@ const Contact = () => {
     // Simulate form submission
     setTimeout(() => {
       setLoading(false);
-      toast({
-        title: t('contact.successMessage'),
-      });
+      console.log('Form submitted:', form);
       setForm({ name: '', email: '', message: '' });
     }, 1000);
   };
@@ -52,7 +48,7 @@ const Contact = () => {
         >
           <div className="mb-8 border-b-2 border-primary pb-2 text-right">
             <h2 className="text-4xl md:text-5xl font-extrabold text-blue-700 bg-blue-50 px-8 py-4 rounded-2xl border-b-4 border-blue-300 inline-block mb-4 font-serif flex items-center justify-center gap-2">
-              <Mail className="h-7 w-7 text-blue-700" />
+              <Email className="h-7 w-7 text-blue-700" />
               {t('contact.title')}
             </h2>
           </div>

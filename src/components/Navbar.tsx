@@ -1,8 +1,7 @@
-
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
+import { Menu as MenuIcon, Close } from '@mui/icons-material';
 
 const Navbar = () => {
   const { t, i18n } = useTranslation();
@@ -85,9 +84,9 @@ const Navbar = () => {
               className="text-foreground hover:text-primary p-2"
             >
               {isOpen ? (
-                <X className="h-6 w-6" />
+                <Close className="h-6 w-6" />
               ) : (
-                <Menu className="h-6 w-6" />
+                <MenuIcon className="h-6 w-6" />
               )}
             </button>
           </div>

@@ -1,8 +1,7 @@
-
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-import { Github, ExternalLink } from 'lucide-react';
+import { GitHub, OpenInNew } from '@mui/icons-material';
 
 interface ProjectProps {
   project: {
@@ -59,7 +58,7 @@ const ProjectCard = ({ project, index, inView }: ProjectProps) => {
             rel="noopener noreferrer"
             className="flex items-center gap-1 text-sm text-primary hover:underline"
           >
-            <ExternalLink className="h-4 w-4" />
+            <OpenInNew className="h-4 w-4" />
             {t('projects.viewProject')}
           </a>
           <a

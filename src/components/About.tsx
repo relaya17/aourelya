@@ -2,7 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { CalendarCheck } from 'lucide-react'; // אייקון לקביעת תור
+import { EventAvailable } from '@mui/icons-material';
 
 const About = () => {
   const { t } = useTranslation();
@@ -99,7 +99,7 @@ const About = () => {
                 href="/booking"
                 className="inline-flex items-center gap-2 bg-transparent border-2 border-blue-700 text-blue-700 px-8 py-4 rounded-lg font-bold text-lg hover:bg-blue-700 hover:text-white transition-colors shadow-lg mb-4 mt-12"
               >
-                <CalendarCheck className="h-6 w-6" />
+                <EventAvailable className="h-6 w-6" />
                 צור קשר
               </a>
             </div>

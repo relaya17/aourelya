@@ -1,28 +1,30 @@
-import React from 'react'
-import { Box, Container, Typography, Avatar } from '@mui/material'
+import React from "react";
+import { Box, Container, Typography, Avatar } from "@mui/material";
 
 const Home = () => {
   return (
     <Container maxWidth="lg">
-      <Box sx={{ 
-        minHeight: '100vh', 
-        display: 'flex', 
-        flexDirection: 'column', 
-        justifyContent: 'center', 
-        alignItems: 'center',
-        textAlign: 'center',
-        py: 4
-      }}>
-        <Avatar 
-          src="/arlet.png" 
+      <Box
+        sx={{
+          minHeight: "100vh",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          textAlign: "center",
+          py: 4,
+        }}
+      >
+        <Avatar
+          src="/arlet.png"
           alt="ארלט"
-          sx={{ 
-            width: { xs: 128, sm: 144, md: 160 }, 
+          sx={{
+            width: { xs: 128, sm: 144, md: 160 },
             height: { xs: 128, sm: 144, md: 160 },
             mb: 3,
             border: 4,
-            borderColor: 'primary.main',
-            boxShadow: 3
+            borderColor: "primary.main",
+            boxShadow: 3,
           }}
         />
         <Typography variant="h2" component="h1" gutterBottom>
@@ -36,7 +38,7 @@ const Home = () => {
         </Typography>
       </Box>
     </Container>
-  )
-}
+  );
+};
 
-export default Home 
+export default Home;

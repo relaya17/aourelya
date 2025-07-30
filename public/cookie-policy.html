@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מדיניות עוגיות - Aurelia</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333;
+            border-bottom: 3px solid #007bff;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #555;
+            margin-top: 30px;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        ul {
+            margin-bottom: 15px;
+        }
+
+        li {
+            margin-bottom: 5px;
+        }
+
+        .contact-info {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 30px;
+        }
+
+        .last-updated {
+            color: #666;
+            font-style: italic;
+            margin-top: 30px;
+        }
+
+        .cookie-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .cookie-table th,
+        .cookie-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: right;
+        }
+
+        .cookie-table th {
+            background-color: #f8f9fa;
+            font-weight: bold;
+        }
+
+        .essential {
+            background-color: #d4edda;
+        }
+
+        .functional {
+            background-color: #fff3cd;
+        }
+
+        .analytics {
+            background-color: #f8d7da;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>מדיניות עוגיות (Cookies)</h1>
+
+        <p><strong>תאריך עדכון אחרון:</strong> 15 בדצמבר 2024</p>
+
+        <h2>מה הן עוגיות?</h2>
+        <p>עוגיות הן קבצי טקסט קטנים שמאוחסנים במכשיר שלכם כאשר אתם מבקרים באתר. הן עוזרות לאתר לזכור מידע על הביקור
+            שלכם, כגון השפה המועדפת שלכם והגדרות אחרות.</p>
+
+        <h2>איך אנו משתמשים בעוגיות</h2>
+        <p>אנו משתמשים בעוגיות כדי:</p>
+        <ul>
+            <li>לשמור על הגדרות נגישות שלכם</li>
+            <li>לשפר את ביצועי האתר</li>
+            <li>לנתח כיצד האתר משמש</li>
+            <li>לספק תוכן מותאם אישית</li>
+            <li>לשמור על אבטחה</li>
+        </ul>
+
+        <h2>סוגי העוגיות שאנו משתמשים</h2>
+
+        <table class="cookie-table">
+            <thead>
+                <tr>
+                    <th>סוג עוגיה</th>
+                    <th>מטרה</th>
+                    <th>משך חיים</th>
+                    <th>חובה</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="essential">
+                    <td>עוגיות הכרחיות</td>
+                    <td>נדרשות לפעילות בסיסית של האתר</td>
+                    <td>עד שנה</td>
+                    <td>כן</td>
+                </tr>
+                <tr class="functional">
+                    <td>עוגיות פונקציונליות</td>
+                    <td>שמירת הגדרות נגישות ושפה</td>
+                    <td>עד שנה</td>
+                    <td>לא</td>
+                </tr>
+                <tr class="analytics">
+                    <td>עוגיות אנליטיקה</td>
+                    <td>ניתוח שימוש באתר ושיפור ביצועים</td>
+                    <td>עד שנתיים</td>
+                    <td>לא</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>פירוט העוגיות</h2>
+
+        <h3>עוגיות הכרחיות</h3>
+        <ul>
+            <li><strong>session_id:</strong> מזהה את הביקור שלכם באתר</li>
+            <li><strong>csrf_token:</strong> מגן מפני התקפות אבטחה</li>
+            <li><strong>language:</strong> שומר את השפה שבחרתם</li>
+        </ul>
+
+        <h3>עוגיות פונקציונליות</h3>
+        <ul>
+            <li><strong>accessibility_settings:</strong> שומר את הגדרות הנגישות שלכם</li>
+            <li><strong>font_size:</strong> שומר את גודל הטקסט שבחרתם</li>
+            <li><strong>high_contrast:</strong> שומר את הגדרת הניגודיות</li>
+            <li><strong>reduced_motion:</strong> שומר את הגדרת הפחתת התנועה</li>
+        </ul>
+
+        <h3>עוגיות אנליטיקה</h3>
+        <ul>
+            <li><strong>_ga:</strong> Google Analytics - מעקב אחר ביקורים</li>
+            <li><strong>_gid:</strong> Google Analytics - זיהוי משתמשים</li>
+            <li><strong>_gat:</strong> Google Analytics - הגבלת בקשות</li>
+        </ul>
+
+        <h2>עוגיות של צדדים שלישיים</h2>
+        <p>אנו עשויים להשתמש בשירותים של צדדים שלישיים שמשתמשים בעוגיות:</p>
+        <ul>
+            <li><strong>Google Analytics:</strong> לניתוח תנועה ושימוש באתר</li>
+            <li><strong>Google Fonts:</strong> לטעינת גופנים</li>
+            <li><strong>Cloudflare:</strong> לאבטחה וביצועים</li>
+        </ul>
+
+        <h2>ניהול עוגיות</h2>
+        <h3>איך לשלוט בעוגיות</h3>
+        <p>ניתן לשלוט בעוגיות במספר דרכים:</p>
+        <ul>
+            <li><strong>הגדרות דפדפן:</strong> השבית עוגיות בהגדרות הדפדפן שלכם</li>
+            <li><strong>כפתור נגישות:</strong> השתמש בכפתור הנגישות הצף באתר</li>
+            <li><strong>מחיקה ידנית:</strong> מחק עוגיות דרך הגדרות הדפדפן</li>
+        </ul>
+
+        <h3>השבתת עוגיות</h3>
+        <p>אם תשביתו עוגיות:</p>
+        <ul>
+            <li>הגדרות נגישות לא יישמרו</li>
+            <li>ייתכן שהאתר לא יעבוד כראוי</li>
+            <li>חלק מהתכונות עשויות להיות מוגבלות</li>
+        </ul>
+
+        <h2>עדכון מדיניות עוגיות</h2>
+        <p>אנו עשויים לעדכן מדיניות עוגיות זו מעת לעת. שינויים יפורסמו באתר זה עם תאריך העדכון.</p>
+
+        <h2>יצירת קשר</h2>
+        <p>אם יש לכם שאלות לגבי מדיניות עוגיות זו:</p>
+        <ul>
+            <li>דוא"ל: privacy@aurelia.com</li>
+            <li>טלפון: +972-XX-XXXXXXX</li>
+            <li>טופס יצירת קשר באתר</li>
+        </ul>
+
+        <div class="contact-info">
+            <h2>מידע נוסף</h2>
+            <p>למידע נוסף על עוגיות ופרטיות:</p>
+            <ul>
+                <li><a href="/privacy-policy.html">מדיניות פרטיות</a></li>
+                <li><a href="/terms-of-service.html">תנאי שימוש</a></li>
+                <li><a href="/accessibility-statement.html">הצהרת נגישות</a></li>
+            </ul>
+        </div>
+
+        <div class="last-updated">
+            <p>עודכן לאחרונה: 15 בדצמבר 2024</p>
+        </div>
+    </div>
+</body>
+
+</html>

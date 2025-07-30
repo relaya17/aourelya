@@ -18,7 +18,20 @@ const MovingQuoteDetails = () => {
         מערכת חכמה להצעות מחיר בתחום ההובלות
       </h1>
       <div className="text-sm text-blue-700 font-bold mb-4 text-center">כולל צ'אטבוט חכם מבוסס בינה מלאכותית!</div>
-      <img src="/Designer11.png" alt="אפליקציית הזמנות חכמה להובלות" className="w-full h-64 object-cover object-center rounded-xl shadow mb-8" />
+      <Box
+            component="img"
+            src="/Designer11.png"
+            alt="אפליקציית הזמנות חכמה להובלות"
+            sx={{
+              width: '100%',
+              maxHeight: '300px',
+              objectFit: 'cover',
+              objectPosition: 'center',
+              borderRadius: 2,
+              boxShadow: 1,
+              mb: 4
+            }}
+          />
       <p className="text-lg mb-6 text-right">
         ברוך הבא לעתיד עולם ההובלות – אפליקציה חכמה ודיגיטלית שנבנתה מהיסוד כדי לשרת אותך בצורה הנוחה, המהירה והיעילה ביותר.<br/>
         בין אם אתה גולש מהמחשב או מהנייד – תיהנה מחוויית שירות דיגיטלית מלאה, זמינה 24/7 וללא צורך בנציג אנושי.

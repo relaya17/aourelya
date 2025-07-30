@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { EventAvailable } from '@mui/icons-material';
+import { Box } from '@mui/material';
 
 const About = () => {
   const { t } = useTranslation();
@@ -19,14 +20,24 @@ const About = () => {
   return (
     <section id="about" className="pb-16 bg-accent/5" style={{ marginTop: 0, paddingTop: 0 }}>
       {/* תמונה מרובעת בראש הדף, הכי צמודה לעליון */}
-      <div className="w-full flex justify-center">
-        <img
+      <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
+        <Box
+          component="img"
           src="/Designer.png"
           alt="תמונה אישית"
-          className="w-80 h-80 rounded-xl object-cover shadow-2xl mb-10 mt-0"
-          style={{ marginTop: '-4rem', paddingTop: 0, position: 'relative', top: 0 }}
+          sx={{
+            width: '240px',
+            height: '240px',
+            borderRadius: 2,
+            objectFit: 'cover',
+            boxShadow: 3,
+            mb: 5,
+            mt: -4,
+            position: 'relative',
+            top: 0
+          }}
         />
-      </div>
+      </Box>
       <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
         <motion.div
           ref={ref}

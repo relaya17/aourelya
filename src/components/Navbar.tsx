@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { motion } from 'framer-motion';
+import { AppBar, Toolbar, Typography, Button, IconButton, Box, Container, Drawer, MenuItem } from '@mui/material';
 import { Menu as MenuIcon, Close } from '@mui/icons-material';
 
 const Navbar = () => {
   const { t, i18n } = useTranslation();
+  const isRTL = i18n.language === 'he';
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -31,91 +32,116 @@ const Navbar = () => {
   const navItems = [
     { key: 'home', href: '#home' },
     { key: 'about', href: '#about' },
-    { key: 'skills', href: '#skills' },
-    { key: 'projects', href: '#projects' },
     { key: 'contact', href: '#contact' },
-    { key: 'blog', href: '#blog' },
-    { key: 'booking', href: '/booking' }, // Assuming booking is a separate page
-    { key: 'services', href: '#services' },
   ];
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-background/90 backdrop-blur-md shadow-md' : ''}`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          <div className="flex items-center">
-            <a href="#" className="text-xl font-bold text-primary">
-             Aurelia
-            </a>
-          </div>
-          
+    <AppBar 
+      position="fixed" 
+      elevation={scrolled ? 4 : 0} 
+      sx={{ 
+        bgcolor: scrolled ? 'rgba(255, 255, 255, 0.9)' : 'transparent', 
+        backdropFilter: 'blur(10px)'
+      }}
+    >
+      <Container maxWidth="lg">
+        <Toolbar sx={{ justifyContent: 'space-between' }}>
+          {/* Logo */}
+          <Typography 
+            variant="h6" 
+            component="a" 
+            href="#" 
+            sx={{ 
+              textDecoration: 'none', 
+              color: 'primary.main',
+              flexGrow: 0,
+              cursor: 'pointer'
+            }}
+          >
+            Aourelya
+          </Typography>
+
           {/* Desktop Navigation */}
-          <div className="hidden md:block">
-            <div className="flex items-center space-x-4 rtl:space-x-reverse">
-              {navItems.map((item) => (
-                <a
-                  key={item.key}
-                  href={item.href}
-                  className="text-foreground hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors"
-                >
-                  {t(`header.${item.key}`)}
-                </a>
-              ))}
-              
-              <button
-                onClick={toggleLanguage}
-                className="ms-4 bg-primary text-primary-foreground px-3 py-1 rounded-md text-sm font-medium transition-colors hover:bg-primary/90"
-              >
-                {t('languageSwitch')}
-              </button>
-            </div>
-          </div>
-          
-          {/* Mobile Navigation Button */}
-          <div className="md:hidden flex items-center">
-            <button
-              onClick={toggleLanguage}
-              className="me-2 text-foreground hover:text-primary"
-            >
-              {t('languageSwitch')}
-            </button>
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="text-foreground hover:text-primary p-2"
-            >
-              {isOpen ? (
-                <Close className="h-6 w-6" />
-              ) : (
-                <MenuIcon className="h-6 w-6" />
-              )}
-            </button>
-          </div>
-        </div>
-      </div>
-      
-      {/* Mobile Navigation Menu */}
-      {isOpen && (
-        <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -10 }}
-          className="md:hidden bg-background/95 backdrop-blur-md shadow-lg"
-        >
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+          <Box 
+            sx={{ 
+              display: { xs: 'none', md: 'flex' }, 
+              gap: 2, 
+              alignItems: 'center'
+            }}
+          >
             {navItems.map((item) => (
-              <a
+              <Button
                 key={item.key}
                 href={item.href}
-                onClick={() => setIsOpen(false)}
-                className="block text-foreground hover:text-primary px-3 py-2 rounded-md text-base font-medium"
+                onClick={(e) => {
+                  e.preventDefault();
+                  const section = document.querySelector(item.href);
+                  section?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                sx={{ color: 'text.primary' }}
               >
                 {t(`header.${item.key}`)}
-              </a>
+              </Button>
             ))}
-          </div>
-        </motion.div>
-      )}
-    </nav>
+          </Box>
+
+          {/* Language & Menu Buttons */}
+          <Box 
+            sx={{ 
+              display: 'flex', 
+              alignItems: 'center', 
+              gap: 1
+            }}
+          >
+            {/* Language Button */}
+            <Button
+              onClick={toggleLanguage}
+              variant="contained"
+              size="small"
+              aria-label={t('languageSwitch')}
+            >
+              {t('languageSwitch')}
+            </Button>
+
+            {/* Mobile Menu Button */}
+            <IconButton
+              onClick={() => setIsOpen(!isOpen)}
+              color="primary"
+              aria-label={isOpen ? t('closeMenu') : t('openMenu')}
+              sx={{ 
+                display: { xs: 'block', md: 'none' }
+              }}
+            >
+              {isOpen ? <Close /> : <MenuIcon />}
+            </IconButton>
+          </Box>
+        </Toolbar>
+      </Container>
+
+      {/* Mobile Menu */}
+      <Drawer
+        anchor={isRTL ? "right" : "left"}
+        open={isOpen}
+        onClose={() => setIsOpen(false)}
+      >
+        <Box sx={{ width: 250, pt: 2 }}>
+          {navItems.map((item) => (
+            <MenuItem
+              key={item.key}
+              onClick={() => {
+                setIsOpen(false);
+                const section = document.querySelector(item.href);
+                section?.scrollIntoView({ behavior: 'smooth' });
+              }}
+              component="a"
+              href={item.href}
+            >
+              {t(`header.${item.key}`)}
+            </MenuItem>
+          ))}
+        </Box>
+      </Drawer>
+    </AppBar>
   );
 };
 

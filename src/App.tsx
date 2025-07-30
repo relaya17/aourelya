@@ -8,17 +8,21 @@ import Home from './pages/Home'
 import NotFound from './pages/NotFound'
 import theme from './theme'
 import './App.css'
+import Navbar from './components/Navbar'
 
 const App: React.FC = () => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Router>
-        <div className="App">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
+        <div style={{ minHeight: '100vh', backgroundColor: '#fff' }}>
+          <Navbar />
+          <main style={{ paddingTop: '64px' }}>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </main>
         </div>
       </Router>
     </ThemeProvider>

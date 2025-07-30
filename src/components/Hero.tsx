@@ -23,9 +23,14 @@ const Hero = () => {
             initial={{ opacity: 0, x: -50 }}
             animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
             transition={{ duration: 0.5 }}
-            style={{ width: '100%', maxWidth: '600px', marginBottom: '2rem' }}
+            style={{ width: '100%', marginBottom: '2rem' }}
           >
-            <Paper elevation={3} sx={{ p: 4, borderRadius: 2 }}>
+            <Paper elevation={3} sx={{ 
+              p: { xs: 2, sm: 3, md: 4 },
+              borderRadius: 2,
+              maxWidth: { sm: '600px', md: '800px' },
+              mx: 'auto'
+            }}>
               <Typography
                 variant="subtitle1"
                 color="primary"
@@ -38,7 +43,12 @@ const Hero = () => {
               <Typography
                 id="hero-heading"
                 variant="h2"
-                sx={{ mb: 3, textAlign: 'center', fontWeight: 700 }}
+                sx={{ 
+                  mb: 3, 
+                  textAlign: 'center', 
+                  fontWeight: 700,
+                  fontSize: { xs: '2rem', sm: '2.5rem', md: '3rem' }
+                }}
               >
                 {t('hero.name')}
               </Typography>
@@ -59,7 +69,13 @@ const Hero = () => {
 
               <Typography
                 variant="h4"
-                sx={{ mb: 3, textAlign: 'center', color: 'text.secondary', fontWeight: 600 }}
+                sx={{ 
+                  mb: 3, 
+                  textAlign: 'center', 
+                  color: 'text.secondary', 
+                  fontWeight: 600,
+                  fontSize: { xs: '1.5rem', sm: '1.75rem', md: '2rem' }
+                }}
               >
                 {t('hero.role')}
               </Typography>
@@ -71,7 +87,12 @@ const Hero = () => {
                 {t('hero.description')}
               </Typography>
 
-              <Box sx={{ display: 'flex', gap: 2, justifyContent: 'center' }}>
+              <Box sx={{ 
+                display: 'flex', 
+                gap: { xs: 1, sm: 2 }, 
+                justifyContent: 'center',
+                flexDirection: { xs: 'column', sm: 'row' }
+              }}>
                 <motion.div
                   initial={{ scale: 1 }}
                   whileHover={{ scale: 1.05 }}

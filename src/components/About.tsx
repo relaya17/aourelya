@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { EventAvailable } from '@mui/icons-material';
-import { Box } from '@mui/material';
+import { Box, Container, Typography, Paper, Button } from '@mui/material';
 
 const About = () => {
   const { t } = useTranslation();
@@ -18,13 +18,21 @@ const About = () => {
   const paragraphs = aboutContent.split(/\n\n/);
 
   return (
-    <section id="about" className="pb-16 bg-accent/5" style={{ marginTop: 0, paddingTop: 0 }}>
-      {/* תמונה מרובעת בראש הדף, הכי צמודה לעליון */}
+    <Box
+      component="section"
+      id="about"
+      sx={{
+        pb: 16,
+        mt: 0,
+        pt: 0,
+        bgcolor: 'background.default'
+      }}
+    >
       <Box sx={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
         <Box
           component="img"
           src="/Designer.png"
-          alt="תמונה אישית"
+          alt={t('about.imageAlt')}
           sx={{
             width: '240px',
             height: '240px',
@@ -38,86 +46,53 @@ const About = () => {
           }}
         />
       </Box>
-      <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
-        <motion.div
-          ref={ref}
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.5 }}
-          className="flex flex-col items-center w-full"
-        >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">{t('about.title')}</h2>
-          <div className="w-24 h-1 bg-primary mx-auto mb-8"></div>
-        </motion.div>
+      <Container maxWidth="lg">
+        <Box sx={{ 
+          width: '100%',
+          mx: 'auto',
+          px: { xs: 2, sm: 3, lg: 4 },
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center'
+        }}>
+          <motion.div
+            ref={ref}
+            initial={{ opacity: 0, y: 20 }}
+            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.5 }}
+            style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%' }}
+          >
+            <Typography variant="h2" sx={{ mb: 2, textAlign: 'center', fontWeight: 'bold' }}>
+              {t('about.title')}
+            </Typography>
+            <Box sx={{ width: '6rem', height: '0.25rem', bgcolor: 'primary.main', mx: 'auto', mb: 4 }} />
+          </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="w-full"
-        >
-          <div className="text-lg text-muted-foreground leading-relaxed space-y-8 text-right rtl text-pretty bg-white/80 rounded-xl p-6 shadow-md">
-            {/* 👩‍💻 ...קצת עלי */}
-            <div className="space-y-4 text-right">
-              <div>
-                <span className="text-2xl mr-1">✨</span>
-                <span className="font-bold">קצת עליי</span>
-              </div>
-              <div>
-                <span>
-                  אני מפתחת אתרים ומערכות עם התמחות עמוקה ב־JavaScript, React, TypeScript, Node.js, WordPress ו־Firebase.<br/>
-                  הניסיון שלי כולל פיתוח צד לקוח ושרת (Full Stack), בניית ממשקים רספונסיביים, התאמה אישית לפי צרכי הלקוח, עם דגש על חוויית משתמש (UX/UI) מדויקת ואופטימיזציה מתקדמת למנועי חיפוש (SEO).<br/>
-                  אני מתמחה בפיתוח פתרונות חכמים שמשלבים בינה מלאכותית (AI) – בין אם מדובר בצ'אטבוטים, מערכות ניתוח נתונים, אוטומציה חכמה או אלגוריתמים מותאמים אישית. הכל כדי שהמערכת תעבוד בשבילך – מהר, מדויק וחכם.
-                </span>
-              </div>
-            </div>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            style={{ width: '100%' }}
+          >
+            <Paper sx={{ p: 3, bgcolor: 'background.paper', borderRadius: 2, boxShadow: 2 }}>
+              <Typography variant="body1" sx={{ whiteSpace: 'pre-line', mb: 4 }}>
+                {t('about.content')}
+              </Typography>
 
-            {/* 💼 השירותים שלי */}
-            <h3 className="text-2xl font-bold mt-8 mb-2 text-right text-blue-600 font-serif italic"><span className="text-2xl mr-1">💼</span>השירותים שלי</h3>
-            <div className="space-y-2 text-right">
-              <div>פיתוח אתרי תדמית, בלוגים, חנויות ואתרי פורטפוליו</div>
-              <div>בניית מערכות חכמות מבוססות Firebase ו-AI</div>
-              <div>פיתוח רכיבים מותאמים אישית ב־React ו־TypeScript</div>
-              <div>בניית תוספים ותבניות מותאמות אישית ל־WordPress</div>
-              <div>אינטגרציה עם API, מערכות CRM, מערכות תשלום ועוד</div>
-              <div>עיצוב חוויית משתמש (UX) וכתיבה מונחית SEO</div>
-            </div>
-
-            {/* 🌟 למה לעבוד איתי */}
-            <h3 className="text-2xl font-bold mt-8 mb-2 text-right text-blue-600 font-serif italic">למה לעבוד איתי</h3>
-            <div className="space-y-4 text-right">
-              <div>
-                <span className="font-bold">שילוב של טכנולוגיה מתקדמת, קריאייטיב וחשיבה עסקית</span>
-              </div>
-              <div>
-                <span className="font-bold">ניסיון מוכח בבניית מערכות מורכבות שמביאות תוצאות אמיתיות</span>
-              </div>
-              <div>
-                <span className="font-bold">ליווי אישי, תקשורת פתוחה ושקיפות מלאה לכל אורך הדרך</span>
-              </div>
-              <div>
-                <span className="font-bold">התאמה מושלמת למובייל, SEO ושיפור ביצועים</span>
-              </div>
-            </div>
-
-            {/* 📞 צור קשר */}
-            <div className="mt-16 flex flex-col items-center">
-              <h2 className="text-5xl md:text-6xl font-extrabold text-blue-700 text-center mb-4 font-serif shadow-lg bg-blue-100 px-8 py-4 rounded-2xl border-b-4 border-blue-700" style={{marginTop: '2rem'}}>
-                הפרויקט הבא שלך מתחיל כאן
-              </h2>
-              <p className="text-lg text-center mb-4">אני מזמינה אותך ליצור קשר ולגלות איך אפשר להפוך רעיון חכם למציאות חכמה</p>
-              <a
+              <Button
+                variant="contained"
+                color="primary"
                 href="/booking"
-                className="inline-flex items-center gap-2 bg-transparent border-2 border-blue-700 text-blue-700 px-8 py-4 rounded-lg font-bold text-lg hover:bg-blue-700 hover:text-white transition-colors shadow-lg mb-4 mt-12"
+                startIcon={<EventAvailable />}
+                sx={{ mt: 4, display: 'flex', mx: 'auto' }}
               >
-                <EventAvailable className="h-6 w-6" />
-                צור קשר
-              </a>
-            </div>
-          </div>
-        </motion.div>
-      </div>
-    </section>
+                {t('about.bookAppointment')}
+              </Button>
+            </Paper>
+          </motion.div>
+        </Box>
+      </Container>
+    </Box>
   );
 };
 

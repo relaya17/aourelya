@@ -15,7 +15,9 @@
     "cta": "Get In Touch"
   },
   "about": {
-    "title": "About Me",
+    "name": "About Me",
+    "imageAlt": "Personal photo",
+    "title": "Full Stack Developer Specializing in Smart Solutions and AI",
     "content": "As an experienced web developer with deep expertise in JavaScript (ES6+) and the leading technology stack of React, TypeScript, Node.js, Express, and MongoDB (MERN Stack), I specialize in creating smart, responsive, and custom web systems and websites. I combine strong development capabilities with deep understanding of user experience (UX/UI) and search engine optimization (SEO) to deliver comprehensive and leading digital solutions.\n\nProven Expertise:\n• Advanced Full-Stack Development: Building robust architectures and seamless integration between frontend and backend\n• React & TypeScript: Creating dynamic and intuitive user interfaces with secure and maintainable code\n• Node.js & Express & MongoDB: Developing strong and secure API servers\n• WordPress Customization: Developing custom templates and plugins\n\nI am committed to delivering digital solutions that generate real business value, while maintaining technological excellence, efficiency, and reliability.",
     "bookAppointment": "Book Appointment"
   },
@@ -30,6 +32,8 @@
     "title": "My Projects",
     "viewProject": "View Project",
     "viewCode": "View Code",
+    "moreInfo": "More Info",
+    "aiChatbot": "Includes AI-powered Smart Chatbot!",
     "project1": {
       "title": "E-commerce Platform",
       "description": "A full-stack e-commerce solution with payment integration, user authentication, and admin dashboard."
@@ -41,6 +45,14 @@
     "project3": {
       "title": "Portfolio Website",
       "description": "A customizable portfolio template for developers to showcase their work and skills."
+    },
+    "moving-quote": {
+      "title": "🚚 Smart Moving Quote System",
+      "description": "The application, built with React and TypeScript, offers an innovative solution for moving companies and logistics service providers. Through a simple and user-friendly interactive form, customers fill in their moving details, and through a smart calculation mechanism, a personalized quote is received immediately - without the need for human response. The system is based on up-to-date technologies, secure, responsive, and designed to provide a smooth and professional user experience. The system is suitable for integration into moving company websites, existing applications, and customer management interfaces (CRM), enabling sales process optimization and increased customer satisfaction."
+    },
+    "residents-management": {
+      "title": "🏢 Smart Resident and Payment Management System",
+      "description": "Our system, based on React, Node.js, and TypeScript, enables simple, secure, and efficient management of residents and payments. With an intuitive interface, advanced management dashboard, and high-level security, the system provides a complete solution for building committee management, resident payments, and receipts, while monitoring performance and ensuring maximum data security. Smart tools for user authentication, access control, and real-time monitoring ensure your community stays organized, secure, and easily managed."
     }
   },
   "contact": {
@@ -58,5 +70,19 @@
   },
   "direction": "ltr",
   "language": "English",
-  "languageSwitch": "עברית"
+  "heroSection": {
+    "title": "Full Stack Developer with a Passion for Smart Code, Precise Design, and Breakthrough AI Technologies",
+    "description": "Experienced web developer with deep expertise in JavaScript, React, TypeScript, and Node.js. I specialize in creating smart, responsive, and custom web systems and websites, integrating advanced artificial intelligence (AI) solutions."
+  },
+  "aboutSection": {
+    "title": "About Me",
+    "description": "As an experienced web developer with deep expertise in advanced technologies, I specialize in creating smart and customized digital solutions. I combine strong development capabilities with deep understanding of user experience and search engine optimization."
+  },
+  "booking": {
+    "title": "Book Appointment",
+    "name": "Full Name",
+    "email": "Email",
+    "submit": "Book Now",
+    "success": "Your booking has been received!"
+  }
 }

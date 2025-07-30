@@ -98,19 +98,18 @@ const Navbar = () => {
               onClick={toggleLanguage}
               variant="contained"
               size="small"
-              aria-label={t('languageSwitch')}
+              component="button"
             >
-              {t('languageSwitch')}
+              {i18n.language === 'en' ? 'עב' : 'EN'}
             </Button>
 
             {/* Mobile Menu Button */}
             <IconButton
               onClick={() => setIsOpen(!isOpen)}
               color="primary"
-              aria-label={isOpen ? t('closeMenu') : t('openMenu')}
-              sx={{ 
-                display: { xs: 'block', md: 'none' }
-              }}
+              component="button"
+              aria-label={(isOpen ? t('closeMenu') : t('openMenu')) as string}
+              sx={{ display: { xs: 'block', md: 'none' } }}
             >
               {isOpen ? <Close /> : <MenuIcon />}
             </IconButton>

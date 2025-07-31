@@ -1,9 +1,6 @@
 
 import React from 'react';
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from "@/components/ui/dialog";
-import { Checkbox } from "@/components/ui/checkbox";
-import { Button } from "@/components/ui/button";
-import { Label } from "@/components/ui/label";
+import { Dialog, DialogTitle, DialogContent, DialogActions, Button, Checkbox, FormControlLabel, Typography } from '@mui/material';
 
 interface Topping {
   id: string;
@@ -44,35 +41,38 @@ const ToppingsModal: React.FC<ToppingsModalProps> = ({
   };
 
   return (
-    <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-md">
-        <DialogHeader>
-          <DialogTitle>Customize Your Pizza</DialogTitle>
-        </DialogHeader>
+    <Dialog open={isOpen} onClose={onClose} maxWidth="sm" fullWidth>
+      <DialogTitle>Customize Your Pizza</DialogTitle>
+      <DialogContent dividers>
         <div className="grid gap-4 py-4">
           {AVAILABLE_TOPPINGS.map((topping) => (
-            <div key={topping.id} className="flex items-center space-x-2">
-              <Checkbox
-                id={topping.id}
-                checked={selectedToppings.includes(topping.id)}
-                onCheckedChange={() => handleToppingChange(topping.id)}
-              />
-              <Label htmlFor={topping.id} className="flex-1">
-                {topping.name}
-              </Label>
-              <span className="text-sm text-gray-500">+${topping.price.toFixed(2)}</span>
-            </div>
+            <FormControlLabel
+              key={topping.id}
+              control={
+                <Checkbox
+                  checked={selectedToppings.includes(topping.id)}
+                  onChange={() => handleToppingChange(topping.id)}
+                  name={topping.id}
+                />
+              }
+              label={
+                <Typography className="flex-1">
+                  {topping.name}
+                  <span className="text-sm text-gray-500 ml-2">+${topping.price.toFixed(2)}</span>
+                </Typography>
+              }
+            />
           ))}
         </div>
-        <DialogFooter>
-          <Button type="button" variant="outline" onClick={onClose}>
-            Cancel
-          </Button>
-          <Button type="button" onClick={() => onConfirm(selectedToppings)} className="bg-red-600 hover:bg-red-700">
-            Add to Cart
-          </Button>
-        </DialogFooter>
       </DialogContent>
+      <DialogActions>
+        <Button onClick={onClose} color="primary">
+          Cancel
+        </Button>
+        <Button onClick={() => onConfirm(selectedToppings)} variant="contained" color="primary" sx={{ bgcolor: '#dc2626', '&:hover': { bgcolor: '#b91c1c' } }}>
+          Add to Cart
+        </Button>
+      </DialogActions>
     </Dialog>
   );
 };

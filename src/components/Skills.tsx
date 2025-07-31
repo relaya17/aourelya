@@ -110,12 +110,13 @@ const Skills = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                 transition={{ duration: 0.5 }}
-                elevation={3}
+                elevation={6} // Increased elevation for consistency
                 sx={{
-                  p: { xs: 2, sm: 3, md: 4 },
+                  p: { xs: 3, sm: 5, md: 8 }, // Consistent padding
                   background: 'linear-gradient(135deg, #f5f7fa 0%, #e8edf5 100%)',
-                  borderRadius: 2,
-                  height: '100%'
+                  borderRadius: 3, // Consistent border radius
+                  height: '100%',
+                  textAlign: 'right' // Ensure text is right-aligned if Hebrew
                 }}
               >
                 <Grid container spacing={3}>
@@ -138,6 +139,7 @@ const Skills = () => {
                               display: 'flex',
                               alignItems: 'center',
                               fontSize: { xs: '0.9rem', sm: '1rem' },
+                              color: 'text.primary', // Consistent text color
                               '&:before': {
                                 content: '""',
                                 width: 6,
@@ -174,6 +176,7 @@ const Skills = () => {
                               display: 'flex',
                               alignItems: 'center',
                               fontSize: { xs: '0.9rem', sm: '1rem' },
+                              color: 'text.primary', // Consistent text color
                               '&:before': {
                                 content: '""',
                                 width: 6,
@@ -203,12 +206,12 @@ const Skills = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
                   transition={{ duration: 0.5, delay: (index + 1) * 0.2 }}
-                  elevation={2}
+                  elevation={6} // Increased elevation for consistency
                   sx={{
-                    p: { xs: 2, sm: 3 },
+                    p: { xs: 3, sm: 5 }, // Consistent padding
                     height: '100%',
                     background: 'linear-gradient(135deg, #f5f7fa 0%, #e8edf5 100%)',
-                    borderRadius: 2
+                    borderRadius: 3 // Consistent border radius
                   }}
                 >
                   <CardTitle>{t(pair.title1)}</CardTitle>
@@ -228,6 +231,7 @@ const Skills = () => {
                           display: 'flex',
                           alignItems: 'center',
                           fontSize: { xs: '0.9rem', sm: '1rem' },
+                          color: 'text.primary', // Consistent text color
                           '&:before': {
                             content: '""',
                             width: 6,

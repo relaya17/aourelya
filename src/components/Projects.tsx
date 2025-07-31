@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Github, ExternalLink } from 'lucide-react';
 import ProjectCard from './ProjectCard';
+import { Paper } from '@mui/material';
 
 const Projects = () => {
   const { t } = useTranslation();
@@ -68,16 +69,28 @@ const Projects = () => {
           <div className="w-24 h-1 bg-primary mx-auto"></div>
         </motion.div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
-            <ProjectCard 
-              key={project.id}
-              project={project}
-              index={index}
-              inView={inView}
-            />
-          ))}
-        </div>
+        <Paper
+          elevation={6} // Consistent shadow
+          sx={{
+            p: { xs: 3, sm: 5, md: 8 }, // Consistent padding
+            borderRadius: 3, // Consistent border radius
+            bgcolor: 'background.paper', // Consistent background color
+            mx: 'auto', // Center the card
+            maxWidth: '100%', // Ensure it takes full width within its container
+            textAlign: 'center' // Ensure content inside is centered
+          }}
+        >
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {projects.map((project, index) => (
+              <ProjectCard 
+                key={project.id}
+                project={project}
+                index={index}
+                inView={inView}
+              />
+            ))}
+          </div>
+        </Paper>
       </div>
     </section>
   );

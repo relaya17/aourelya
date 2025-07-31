@@ -1,57 +1,79 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { GitHub, LinkedIn, Twitter } from '@mui/icons-material';
+import { Box, Paper, Typography } from '@mui/material';
+// import { visuallyHidden } from '@mui/material/utils'; // Removed import
 
 const Footer = () => {
   const { t } = useTranslation();
   const currentYear = new Date().getFullYear();
   
   return (
-    <footer className="bg-muted/30 py-8">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row justify-between items-center">
-          <div className="mb-4 md:mb-0">
-            <p className="text-sm text-muted-foreground">
-              &copy; {currentYear} {t('hero.name')}. {t('footer.rights')}
-            </p>
-          </div>
+    <Box
+      component="footer"
+      sx={{
+        py: 4,
+        bgcolor: 'background.default',
+        borderTop: '1px solid',
+        borderColor: 'divider'
+      }}
+    >
+      <Paper
+        elevation={6} // Increased elevation for consistency
+        sx={{
+          mx: 'auto',
+          maxWidth: '1280px', // Equivalent to max-w-7xl
+          p: { xs: 3, sm: 5, lg: 8 }, // Consistent padding
+          borderRadius: 3, // Consistent border radius
+          bgcolor: 'background.paper',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          textAlign: 'center'
+        }}
+      >
+        <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, justifyContent: 'space-between', alignItems: 'center', width: '100%' }}>
+          <Typography variant="body2" color="text.primary" sx={{ mb: { xs: 2, md: 0 } }}>
+            &copy; {currentYear} {t('hero.name')}. {t('footer.rights')}
+          </Typography>
           
-          <div className="flex space-x-6">
+          <Box sx={{ display: 'flex', gap: { xs: 2, sm: 3 } }}>
             <a 
               href="https://github.com" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary transition-colors"
+              style={{ color: 'inherit' }}
             >
-              <GitHub className="h-5 w-5" />
-              <span className="sr-only">GitHub</span>
+              <GitHub sx={{ fontSize: '1.5rem' }} />
+              <span className="sr-only">GitHub</span> {/* Reverted to span with sr-only */}
             </a>
             <a 
               href="https://linkedin.com" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary transition-colors"
+              style={{ color: 'inherit' }}
             >
-              <LinkedIn className="h-5 w-5" />
-              <span className="sr-only">LinkedIn</span>
+              <LinkedIn sx={{ fontSize: '1.5rem' }} />
+              <span className="sr-only">LinkedIn</span> {/* Reverted to span with sr-only */}
             </a>
             <a 
               href="https://twitter.com" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary transition-colors"
+              style={{ color: 'inherit' }}
             >
-              <Twitter className="h-5 w-5" />
-              <span className="sr-only">Twitter</span>
+              <Twitter sx={{ fontSize: '1.5rem' }} />
+              <span className="sr-only">Twitter</span> {/* Reverted to span with sr-only */}
             </a>
-          </div>
-        </div>
+          </Box>
+        </Box>
         
-        <div className="mt-4 text-center text-xs text-muted-foreground">
-          <p>{t('footer.madeWith')}</p>
-        </div>
-      </div>
-    </footer>
+        <Typography variant="caption" color="text.primary" sx={{ mt: 2 }}>
+          {t('footer.madeWith')}
+        </Typography>
+      </Paper>
+    </Box>
   );
 };
 

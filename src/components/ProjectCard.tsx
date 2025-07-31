@@ -63,7 +63,7 @@ const ProjectCard = ({ project, index, inView }: ProjectProps) => {
           </Typography>
         )}
         
-        <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
+        <Typography variant="body1" color="text.primary" sx={{ mb: 2 }}>
           {t(`projects.${project.id}.description`)}
         </Typography>
         

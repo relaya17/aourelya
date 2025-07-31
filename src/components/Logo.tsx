@@ -17,7 +17,7 @@ const Logo: FC<LogoProps> = memo(({ logoSrc, logoAltKey = 'logo.alt' }) => {
       {logoSrc ? (
         <img
           src={logoSrc}
-          alt={t(logoAltKey)}
+          alt={t(logoAltKey) as string}
           className="h-6 w-6 object-contain"
           loading="lazy"
           decoding="async"

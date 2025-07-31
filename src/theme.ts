@@ -19,8 +19,8 @@ const themeOptions: ThemeOptions = {
             paper: "#ffffff",
         },
         text: {
-            primary: "rgba(0, 0, 0, 0.87)",
-            secondary: "rgba(0, 0, 0, 0.54)",
+            primary: "#333333",
+            secondary: "#666666",
         },
     },
     typography: {

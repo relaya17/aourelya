@@ -5,7 +5,8 @@
   "header": {
     "home": "Home",
     "about": "About",
-    "contact": "Contact"
+    "contact": "Contact",
+    "siteTitle": "Aourelya"
   },
   "hero": {
     "greeting": "Hello, I'm",
@@ -19,7 +20,26 @@
     "imageAlt": "Personal photo",
     "title": "Full Stack Developer Specializing in Smart Solutions and AI",
     "content": "As an experienced web developer with deep expertise in JavaScript (ES6+) and the leading technology stack of React, TypeScript, Node.js, Express, and MongoDB (MERN Stack), I specialize in creating smart, responsive, and custom web systems and websites. I combine strong development capabilities with deep understanding of user experience (UX/UI) and search engine optimization (SEO) to deliver comprehensive and leading digital solutions.\n\nProven Expertise:\n• Advanced Full-Stack Development: Building robust architectures and seamless integration between frontend and backend\n• React & TypeScript: Creating dynamic and intuitive user interfaces with secure and maintainable code\n• Node.js & Express & MongoDB: Developing strong and secure API servers\n• WordPress Customization: Developing custom templates and plugins\n\nI am committed to delivering digital solutions that generate real business value, while maintaining technological excellence, efficiency, and reliability.",
-    "bookAppointment": "Book Appointment"
+    "bookAppointment": "Book Appointment",
+    "subtitles": {
+      "aboutMe": "About Me",
+      "services": "My Services",
+      "whyWorkWithMe": "Why Work With Me"
+    },
+    "services": {
+      "webDevelopment": "Website Development (Company, Blogs, Stores, Portfolios)",
+      "aiFirebaseSystems": "Smart Systems Development with Firebase and AI",
+      "reactTypeScriptComponents": "Custom React & TypeScript Component Development",
+      "wordpressCustomization": "Custom WordPress Plugin & Theme Development",
+      "apiIntegrations": "API, CRM, Payment System Integrations",
+      "uxSeoDesign": "UX Design & SEO-Driven Content Writing"
+    },
+    "whyMe": {
+      "techCreativityBusiness": "Combination of Advanced Technology, Creativity & Business Acumen",
+      "provenExperience": "Proven Experience in Building Complex Systems that Deliver Real Results",
+      "personalGuidance": "Personalized Guidance, Open Communication & Full Transparency Throughout the Process",
+      "mobileSeoPerformance": "Perfect Adaptation for Mobile, SEO & Performance Improvement"
+    }
   },
   "skills": {
     "title": "My Skills",
@@ -65,21 +85,13 @@
     "messageLabel": "Your Message",
     "submitButton": "Send Message",
     "successMessage": "Your message has been sent successfully!",
-    "errorMessage": "Failed to send message. Please try again."
+    "errorMessage": "Failed to send message. Please try again.",
+    "invitation": "I invite you to get in touch and discover how to turn a smart idea into a smart reality",
+    "ctaButton": "Contact Us"
   },
   "footer": {
     "rights": "All Rights Reserved",
     "madeWith": "Made with ❤️ using React"
-  },
-  "direction": "ltr",
-  "language": "English",
-  "heroSection": {
-    "title": "Full Stack Developer with a Passion for Smart Code, Precise Design, and Breakthrough AI Technologies",
-    "description": "Experienced web developer with deep expertise in JavaScript, React, TypeScript, and Node.js. I specialize in creating smart, responsive, and custom web systems and websites, integrating advanced artificial intelligence (AI) solutions."
-  },
-  "aboutSection": {
-    "title": "About Me",
-    "description": "As an experienced web developer with deep expertise in advanced technologies, I specialize in creating smart and customized digital solutions. I combine strong development capabilities with deep understanding of user experience and search engine optimization."
   },
   "booking": {
     "title": "Book Appointment",

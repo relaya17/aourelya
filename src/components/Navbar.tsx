@@ -58,7 +58,7 @@ const Navbar = () => {
               cursor: 'pointer'
             }}
           >
-            Aourelya
+            {t('header.siteTitle')}
           </Typography>
 
           {/* Desktop Navigation */}
@@ -100,7 +100,7 @@ const Navbar = () => {
               size="small"
               component="button"
             >
-              {i18n.language === 'en' ? 'עב' : 'EN'}
+              {t('languageSwitch')}
             </Button>
 
             {/* Mobile Menu Button */}

@@ -23,10 +23,13 @@
   },
   "skills": {
     "title": "My Skills",
-    "frontend": "Frontend",
-    "backend": "Backend",
+    "subtitle": "Comprehensive technological expertise in advanced system development",
+    "frontend": "Frontend Development",
+    "backend": "Backend Development",
     "databases": "Databases",
-    "tools": "Tools & Others"
+    "tools": "Development Tools",
+    "ai": "Artificial Intelligence",
+    "cloud": "Cloud Services"
   },
   "projects": {
     "title": "My Projects",

@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { CalendarCheck } from 'lucide-react'; // אייקון לקביעת תור
-import { Box, Typography, Paper } from '@mui/material'; // Import Box, Typography, and Paper from Material UI
+import { Box, Typography, Paper, Grid } from '@mui/material'; // Import Box, Typography, and Paper from Material UI
 
 const About = () => {
   const { t } = useTranslation();
@@ -147,29 +147,76 @@ const About = () => {
             >
               {t('about.subtitles.whyWorkWithMe')}
             </Typography>
-            <Box component="div" sx={{
-                listStyle: 'none',
-                p: 0,
-                m: 0,
-                color: 'text.primary', // Ensure list items have consistent text color
-                textAlign: 'right',
-                fontSize: { xs: '0.9rem', sm: '1rem' }, // Consistent font size
-                lineHeight: 1.6,
-                spaceY: 4 // Tailwind's space-y-4
-            }}>
-              <div>
-                <Typography component="span" sx={{ fontWeight: 'bold', color: 'text.primary' }}>{t('about.whyMe.techCreativityBusiness')}</Typography>
-              </div>
-              <div>
-                <Typography component="span" sx={{ fontWeight: 'bold', color: 'text.primary' }}>{t('about.whyMe.provenExperience')}</Typography>
-              </div>
-              <div>
-                <Typography component="span" sx={{ fontWeight: 'bold', color: 'text.primary' }}>{t('about.whyMe.personalGuidance')}</Typography>
-              </div>
-              <div>
-                <Typography component="span" sx={{ fontWeight: 'bold', color: 'text.primary' }}>{t('about.whyMe.mobileSeoPerformance')}</Typography>
-              </div>
-            </Box>
+            <Grid container spacing={2} sx={{ mt: 2 }}> {/* Use Grid for individual cards and add spacing */}
+              <Grid item xs={12} sm={6}> {/* Use Grid item for each card */}
+                <Paper
+                  elevation={3} // Lighter shadow for inner cards
+                  sx={{
+                    p: 2,
+                    borderRadius: 2,
+                    bgcolor: '#f5f5f5', // Light gray background
+                    textAlign: 'center', // Centered content
+                    height: '100%', // Ensure consistent height
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center'
+                  }}
+                >
+                  <Typography component="span" sx={{ fontWeight: 'bold', color: 'text.primary' }}>{t('about.whyMe.techCreativityBusiness')}</Typography>
+                </Paper>
+              </Grid>
+              <Grid item xs={12} sm={6}> {/* Use Grid item for each card */}
+                <Paper
+                  elevation={3}
+                  sx={{
+                    p: 2,
+                    borderRadius: 2,
+                    bgcolor: '#f5f5f5',
+                    textAlign: 'center',
+                    height: '100%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center'
+                  }}
+                >
+                  <Typography component="span" sx={{ fontWeight: 'bold', color: 'text.primary' }}>{t('about.whyMe.provenExperience')}</Typography>
+                </Paper>
+              </Grid>
+              <Grid item xs={12} sm={6}> {/* Use Grid item for each card */}
+                <Paper
+                  elevation={3}
+                  sx={{
+                    p: 2,
+                    borderRadius: 2,
+                    bgcolor: '#f5f5f5',
+                    textAlign: 'center',
+                    height: '100%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center'
+                  }}
+                >
+                  <Typography component="span" sx={{ fontWeight: 'bold', color: 'text.primary' }}>{t('about.whyMe.personalGuidance')}</Typography>
+                </Paper>
+              </Grid>
+              <Grid item xs={12} sm={6}> {/* Use Grid item for each card */}
+                <Paper
+                  elevation={3}
+                  sx={{
+                    p: 2,
+                    borderRadius: 2,
+                    bgcolor: '#f5f5f5',
+                    textAlign: 'center',
+                    height: '100%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center'
+                  }}
+                >
+                  <Typography component="span" sx={{ fontWeight: 'bold', color: 'text.primary' }}>{t('about.whyMe.mobileSeoPerformance')}</Typography>
+                </Paper>
+              </Grid>
+            </Grid>
 
             {/* 📞 צור קשר */}
             <Box sx={{ mt: 8, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>

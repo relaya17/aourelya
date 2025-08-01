@@ -1,0 +1,146 @@
+{
+    "languageSwitch": "TRANSLATE_ME_AR",
+    "openMenu": "TRANSLATE_ME_AR",
+    "closeMenu": "TRANSLATE_ME_AR",
+    "header": {
+        "home": "TRANSLATE_ME_AR",
+        "about": "TRANSLATE_ME_AR",
+        "contact": "TRANSLATE_ME_AR",
+        "siteTitle": "TRANSLATE_ME_AR"
+    },
+    "hero": {
+        "greeting": "TRANSLATE_ME_AR",
+        "name": "TRANSLATE_ME_AR",
+        "role": "TRANSLATE_ME_AR",
+        "description": "TRANSLATE_ME_AR",
+        "cta": "TRANSLATE_ME_AR"
+    },
+    "about": {
+        "name": "TRANSLATE_ME_AR",
+        "imageAlt": "TRANSLATE_ME_AR",
+        "title": "TRANSLATE_ME_AR",
+        "content": "TRANSLATE_ME_AR",
+        "bookAppointment": "TRANSLATE_ME_AR",
+        "subtitles": {
+            "aboutMe": "TRANSLATE_ME_AR",
+            "services": "TRANSLATE_ME_AR",
+            "whyWorkWithMe": "TRANSLATE_ME_AR"
+        },
+        "services": {
+            "webDevelopment": "TRANSLATE_ME_AR",
+            "aiFirebaseSystems": "TRANSLATE_ME_AR",
+            "reactTypeScriptComponents": "TRANSLATE_ME_AR",
+            "wordpressCustomization": "TRANSLATE_ME_AR",
+            "apiIntegrations": "TRANSLATE_ME_AR",
+            "uxSeoDesign": "TRANSLATE_ME_AR"
+        },
+        "whyMe": {
+            "techCreativityBusiness": "TRANSLATE_ME_AR",
+            "provenExperience": "TRANSLATE_ME_AR",
+            "personalGuidance": "TRANSLATE_ME_AR",
+            "mobileSeoPerformance": "TRANSLATE_ME_AR"
+        }
+    },
+    "skills": {
+        "title": "TRANSLATE_ME_AR",
+        "subtitle": "TRANSLATE_ME_AR",
+        "frontend": "TRANSLATE_ME_AR",
+        "backend": "TRANSLATE_ME_AR",
+        "databases": "TRANSLATE_ME_AR",
+        "tools": "TRANSLATE_ME_AR",
+        "ai": "TRANSLATE_ME_AR",
+        "cloud": "TRANSLATE_ME_AR"
+    },
+    "projects": {
+        "title": "TRANSLATE_ME_AR",
+        "viewProject": "TRANSLATE_ME_AR",
+        "viewCode": "TRANSLATE_ME_AR",
+        "moreInfo": "TRANSLATE_ME_AR",
+        "aiChatbot": "TRANSLATE_ME_AR",
+        "project1": {
+            "title": "TRANSLATE_ME_AR",
+            "description": "TRANSLATE_ME_AR"
+        },
+        "project2": {
+            "title": "TRANSLATE_ME_AR",
+            "description": "TRANSLATE_ME_AR"
+        },
+        "project3": {
+            "title": "TRANSLATE_ME_AR",
+            "description": "TRANSLATE_ME_AR"
+        },
+        "moving-quote": {
+            "title": "TRANSLATE_ME_AR",
+            "description": "TRANSLATE_ME_AR"
+        },
+        "residents-management": {
+            "title": "TRANSLATE_ME_AR",
+            "description": "TRANSLATE_ME_AR"
+        }
+    },
+    "contact": {
+        "title": "TRANSLATE_ME_AR",
+        "nameLabel": "TRANSLATE_ME_AR",
+        "emailLabel": "TRANSLATE_ME_AR",
+        "messageLabel": "TRANSLATE_ME_AR",
+        "submitButton": "TRANSLATE_ME_AR",
+        "successMessage": "TRANSLATE_ME_AR",
+        "errorMessage": "TRANSLATE_ME_AR",
+        "invitation": "TRANSLATE_ME_AR",
+        "ctaButton": "TRANSLATE_ME_AR",
+        "sending": "TRANSLATE_ME_AR",
+        "whatsappButton": "TRANSLATE_ME_AR"
+    },
+    "footer": {
+        "rights": "TRANSLATE_ME_AR",
+        "madeWith": "TRANSLATE_ME_AR"
+    },
+    "booking": {
+        "title": "TRANSLATE_ME_AR",
+        "steps": {
+            "personalDetails": "TRANSLATE_ME_AR",
+            "apartmentDate": "TRANSLATE_ME_AR",
+            "addresses": "TRANSLATE_ME_AR",
+            "itemList": "TRANSLATE_ME_AR",
+            "summary": "TRANSLATE_ME_AR"
+        },
+        "apartmentTypes": {
+            "apartment": "TRANSLATE_ME_AR",
+            "privateHouse": "TRANSLATE_ME_AR",
+            "gardenApartment": "TRANSLATE_ME_AR",
+            "penthouse": "TRANSLATE_ME_AR",
+            "other": "TRANSLATE_ME_AR"
+        },
+        "name": "TRANSLATE_ME_AR",
+        "phone": "TRANSLATE_ME_AR",
+        "email": "TRANSLATE_ME_AR",
+        "apartmentType": "TRANSLATE_ME_AR",
+        "rooms": "TRANSLATE_ME_AR",
+        "moveDate": "TRANSLATE_ME_AR",
+        "currentAddress": "TRANSLATE_ME_AR",
+        "destinationAddress": "TRANSLATE_ME_AR",
+        "fullAddress": "TRANSLATE_ME_AR",
+        "floor": "TRANSLATE_ME_AR",
+        "hasElevator": "TRANSLATE_ME_AR",
+        "needsLift": "TRANSLATE_ME_AR",
+        "itemListPlaceholder": "TRANSLATE_ME_AR",
+        "summary": "TRANSLATE_ME_AR",
+        "estimatedPrice": "TRANSLATE_ME_AR",
+        "summaryNote": "TRANSLATE_ME_AR",
+        "backButton": "TRANSLATE_ME_AR",
+        "nextButton": "TRANSLATE_ME_AR",
+        "submitButton": "TRANSLATE_ME_AR",
+        "success": "TRANSLATE_ME_AR",
+        "validation": {
+            "fullNameRequired": "TRANSLATE_ME_AR",
+            "phoneRequired": "TRANSLATE_ME_AR",
+            "invalidPhone": "TRANSLATE_ME_AR",
+            "invalidEmail": "TRANSLATE_ME_AR",
+            "apartmentTypeRequired": "TRANSLATE_ME_AR",
+            "roomsRequired": "TRANSLATE_ME_AR",
+            "moveDateRequired": "TRANSLATE_ME_AR",
+            "fromAddressRequired": "TRANSLATE_ME_AR",
+            "toAddressRequired": "TRANSLATE_ME_AR"
+        }
+    }
+}

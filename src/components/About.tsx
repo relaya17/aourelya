@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { CalendarCheck } from 'lucide-react'; // אייקון לקביעת תור
 import { Box, Typography, Paper, Grid } from '@mui/material'; // Import Box, Typography, and Paper from Material UI
+import { HelpOutline } from '@mui/icons-material'; // Import HelpOutline icon
 
 const About = () => {
   const { t } = useTranslation();
@@ -34,11 +35,11 @@ const About = () => {
         />
       </Box>
       <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
-        <motion.div
-          ref={ref}
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.5 }}
+          <motion.div
+            ref={ref}
+            initial={{ opacity: 0, y: 20 }}
+            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            transition={{ duration: 0.5 }}
           className="flex flex-col items-center w-full"
         >
           <Typography
@@ -56,15 +57,15 @@ const About = () => {
               textAlign: 'center' // Ensure title is centered
             }}
           >
-            {t('about.title')}
-          </Typography>
+              {t('about.title')}
+            </Typography>
           <div className="w-24 h-1 bg-primary mx-auto mb-8"></div>
-        </motion.div>
+          </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
           className="w-full"
         >
           <Paper
@@ -75,46 +76,58 @@ const About = () => {
               bgcolor: 'background.paper', // Consistent background color
               mx: 'auto', // Center the card
               maxWidth: '100%', // Ensure it takes full width within its container
-              textAlign: 'right' // Text alignment as before
+              textAlign: 'center', // Changed to center
+              display: 'flex', // Added display flex
+              flexDirection: 'column', // Added flex direction column
+              alignItems: 'center' // Added align items center
             }}
           >
             {/* 👩‍💻 ...קצת עלי */}
-            <div className="space-y-4 text-right">
+            <Box sx={{ display: 'flex', alignItems: 'center', mt: 3, mb: 1, justifyContent: 'flex-start' }}>
               <Typography
                 variant="h6"
                 sx={{
                   fontFamily: '"Playfair Display", serif',
                   fontWeight: 600,
                   fontSize: { xs: '1.2rem', sm: '1.3rem', md: '1.4rem' },
-                  color: 'primary.main', // Solid blue color like Hero
-                  mb: 1,
-                  textAlign: 'left'
+                  color: 'primary.main',
+                  // Removed textAlign: 'left' to allow inheritance from document.dir
                 }}
               >
-                <span className="text-2xl mr-1">✨</span> {t('about.subtitles.aboutMe')}
+                {t('about.subtitles.aboutMe')}
               </Typography>
+              {/* Icon after text for dynamic RTL/LTR */} 
+              <Box sx={{ fontSize: { xs: '1.8rem', sm: '2rem' }, color: 'secondary.main', marginLeft: '0.5rem' }}>
+                ✨
+              </Box>
+            </Box>
+            <Box className="space-y-4" sx={{ mb: 4 }}> {/* Removed text-right, added margin-bottom */} 
               <div>
                 <Typography variant="body1" sx={{ color: 'text.primary', lineHeight: 1.6 }}>
                   {t('about.content').split('\n\n')[0]}
                 </Typography>
               </div>
-            </div>
+            </Box>
 
             {/* 💼 השירותים שלי */}
-            <Typography
-              variant="h6"
-              sx={{
-                fontFamily: '"Playfair Display", serif',
-                fontWeight: 600,
-                fontSize: { xs: '1.2rem', sm: '1.3rem', md: '1.4rem' },
-                color: 'primary.main', // Solid blue color like Hero
-                mt: 3,
-                mb: 1,
-                textAlign: 'left'
-              }}
-            >
-              <span className="text-2xl mr-1">💼</span>{t('about.subtitles.services')}
-            </Typography>
+            <Box sx={{ display: 'flex', alignItems: 'center', mt: 3, mb: 1, justifyContent: 'flex-start' }}>
+              <Typography
+                variant="h6"
+                sx={{
+                  fontFamily: '"Playfair Display", serif',
+                  fontWeight: 600,
+                  fontSize: { xs: '1.2rem', sm: '1.3rem', md: '1.4rem' },
+                  color: 'primary.main',
+                  // Removed textAlign: 'left' to allow inheritance from document.dir
+                }}
+              >
+                {t('about.subtitles.services')}
+              </Typography>
+              {/* Icon after text for dynamic RTL/LTR */} 
+              <Box sx={{ fontSize: { xs: '1.8rem', sm: '2rem' }, color: 'secondary.main', marginLeft: '0.5rem' }}>
+                💼
+              </Box>
+            </Box>
             <Box component="ul" sx={{
                 listStyle: 'none',
                 p: 0,
@@ -133,20 +146,29 @@ const About = () => {
             </Box>
 
             {/* 🌟 למה לעבוד איתי */}
-            <Typography
-              variant="h6"
-              sx={{
-                fontFamily: '"Playfair Display", serif',
-                fontWeight: 600,
-                fontSize: { xs: '1.2rem', sm: '1.3rem', md: '1.4rem' },
-                color: 'primary.main', // Solid blue color like Hero
-                mt: 3,
-                mb: 1,
-                textAlign: 'left'
-              }}
-            >
-              {t('about.subtitles.whyWorkWithMe')}
-            </Typography>
+            <Box sx={{ display: 'flex', alignItems: 'center', mt: 6, mb: 1, justifyContent: 'flex-start' }}> {/* Changed mt to 6 for more spacing */}
+              <Typography
+                variant="h6"
+                sx={{
+                  fontFamily: '"Playfair Display", serif',
+                  fontWeight: 600,
+                  fontSize: { xs: '1.2rem', sm: '1.3rem', md: '1.4rem' },
+                  color: 'primary.main',
+                  // Removed textAlign: 'left' to allow inheritance from document.dir
+                }}
+              >
+                {t('about.subtitles.whyWorkWithMe')}
+              </Typography>
+              <motion.div
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.5 }}
+                transition={{ duration: 0.5, delay: 0.3, type: 'spring', stiffness: 200 }}
+                whileHover={{ scale: 1.1, rotate: 10 }} // Subtle animation on hover
+                style={{ marginLeft: '0.5rem' }} // Ensure icon is to the right of text with spacing
+              >
+                <HelpOutline sx={{ fontSize: { xs: '2rem', sm: '2.5rem' }, color: 'secondary.main' }} /> {/* Large and colored icon */}
+              </motion.div>
+            </Box>
             <Grid container spacing={2} sx={{ mt: 2 }}> {/* Use Grid for individual cards and add spacing */}
               <Grid item xs={12} sm={6}> {/* Use Grid item for each card */}
                 <Paper
@@ -154,12 +176,17 @@ const About = () => {
                   sx={{
                     p: 2,
                     borderRadius: 2,
-                    bgcolor: '#f5f5f5', // Light gray background
+                    bgcolor: '#e3f2fd', // Light blue background
                     textAlign: 'center', // Centered content
                     height: '100%', // Ensure consistent height
                     display: 'flex',
                     alignItems: 'center',
-                    justifyContent: 'center'
+                    justifyContent: 'center',
+                    transition: 'box-shadow 0.3s ease-in-out', // Smooth transition for hover
+                    '&:hover': {
+                      boxShadow: 6, // Increase shadow on hover for light organ effect
+                      transform: 'scale(1.02)', // Slight scale up on hover
+                    }
                   }}
                 >
                   <Typography component="span" sx={{ fontWeight: 'bold', color: 'text.primary' }}>{t('about.whyMe.techCreativityBusiness')}</Typography>
@@ -171,12 +198,17 @@ const About = () => {
                   sx={{
                     p: 2,
                     borderRadius: 2,
-                    bgcolor: '#f5f5f5',
+                    bgcolor: '#e8f5e9', // Light green background
                     textAlign: 'center',
                     height: '100%',
                     display: 'flex',
                     alignItems: 'center',
-                    justifyContent: 'center'
+                    justifyContent: 'center',
+                    transition: 'box-shadow 0.3s ease-in-out',
+                    '&:hover': {
+                      boxShadow: 6,
+                      transform: 'scale(1.02)',
+                    }
                   }}
                 >
                   <Typography component="span" sx={{ fontWeight: 'bold', color: 'text.primary' }}>{t('about.whyMe.provenExperience')}</Typography>
@@ -188,12 +220,17 @@ const About = () => {
                   sx={{
                     p: 2,
                     borderRadius: 2,
-                    bgcolor: '#f5f5f5',
+                    bgcolor: '#fce4ec', // Light pink background
                     textAlign: 'center',
                     height: '100%',
                     display: 'flex',
                     alignItems: 'center',
-                    justifyContent: 'center'
+                    justifyContent: 'center',
+                    transition: 'box-shadow 0.3s ease-in-out',
+                    '&:hover': {
+                      boxShadow: 6,
+                      transform: 'scale(1.02)',
+                    }
                   }}
                 >
                   <Typography component="span" sx={{ fontWeight: 'bold', color: 'text.primary' }}>{t('about.whyMe.personalGuidance')}</Typography>
@@ -205,12 +242,17 @@ const About = () => {
                   sx={{
                     p: 2,
                     borderRadius: 2,
-                    bgcolor: '#f5f5f5',
+                    bgcolor: '#fffde7', // Light yellow background
                     textAlign: 'center',
                     height: '100%',
                     display: 'flex',
                     alignItems: 'center',
-                    justifyContent: 'center'
+                    justifyContent: 'center',
+                    transition: 'box-shadow 0.3s ease-in-out',
+                    '&:hover': {
+                      boxShadow: 6,
+                      transform: 'scale(1.02)',
+                    }
                   }}
                 >
                   <Typography component="span" sx={{ fontWeight: 'bold', color: 'text.primary' }}>{t('about.whyMe.mobileSeoPerformance')}</Typography>
@@ -243,8 +285,8 @@ const About = () => {
                 {t('contact.ctaButton')}
               </a>
             </Box>
-          </Paper>
-        </motion.div>
+            </Paper>
+          </motion.div>
       </div>
     </section>
   );

@@ -87,17 +87,60 @@
     "successMessage": "Your message has been sent successfully!",
     "errorMessage": "Failed to send message. Please try again.",
     "invitation": "I invite you to get in touch and discover how to turn a smart idea into a smart reality",
-    "ctaButton": "Contact Us"
+    "ctaButton": "Contact Us",
+    "sending": "Sending...",
+    "whatsappButton": "Contact via WhatsApp"
   },
   "footer": {
     "rights": "All Rights Reserved",
     "madeWith": "Made with ❤️ using React"
   },
   "booking": {
-    "title": "Book Appointment",
+    "title": "Move Estimate Request",
+    "steps": {
+      "personalDetails": "Personal Details",
+      "apartmentDate": "Apartment Type & Date",
+      "addresses": "Moving Addresses",
+      "itemList": "Item List",
+      "summary": "Summary"
+    },
+    "apartmentTypes": {
+      "apartment": "Apartment",
+      "privateHouse": "Private House",
+      "gardenApartment": "Garden Apartment",
+      "penthouse": "Penthouse",
+      "other": "Other"
+    },
     "name": "Full Name",
-    "email": "Email",
-    "submit": "Book Now",
-    "success": "Your booking has been received!"
+    "phone": "Phone Number",
+    "email": "Email Address",
+    "apartmentType": "Apartment Type",
+    "rooms": "Number of Rooms",
+    "moveDate": "Preferred Move Date",
+    "currentAddress": "Current Address",
+    "destinationAddress": "Destination Address",
+    "fullAddress": "Full Address",
+    "floor": "Floor",
+    "hasElevator": "Has Elevator",
+    "needsLift": "Needs Lift",
+    "itemListPlaceholder": "Here you can implement the item list for moving (dynamic field with add/remove).",
+    "summary": "Summary",
+    "estimatedPrice": "Estimated Price",
+    "summaryNote": "(Option to add more notes and a submit button)",
+    "backButton": "Back",
+    "nextButton": "Next",
+    "submitButton": "Submit",
+    "success": "Your request has been sent successfully!",
+    "validation": {
+      "fullNameRequired": "Please enter full name",
+      "phoneRequired": "Please enter phone number",
+      "invalidPhone": "Invalid phone number (05XXXXXXXX)",
+      "invalidEmail": "Invalid email address",
+      "apartmentTypeRequired": "Please select apartment type",
+      "roomsRequired": "Please select number of rooms",
+      "moveDateRequired": "Please select move date",
+      "fromAddressRequired": "Please enter current address",
+      "toAddressRequired": "Please enter destination address"
+    }
   }
 }

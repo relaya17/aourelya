@@ -84,10 +84,12 @@
     "emailLabel": "אימייל",
     "messageLabel": "ההודעה שלך",
     "submitButton": "שלח",
-    "successMessage": "ההודעה שלך נשלחה בהצלחה!",
+    "successMessage": "הודעתך נשלחה בהצלחה!",
     "errorMessage": "שליחת ההודעה נכשלה. אנא נסה שוב.",
     "invitation": "אני מזמינה אותך ליצור קשר ולגלות איך אפשר להפוך רעיון חכם למציאות חכמה",
-    "ctaButton": "צור קשר"
+    "ctaButton": "צור קשר",
+    "sending": "שולח...",
+    "whatsappButton": "צור קשר בוואטסאפ"
   },
   "footer": {
     "rights": "כל הזכויות שמורות",
@@ -95,10 +97,51 @@
   },
   "nextProjectTitle": "הפרויקט הבא שלך מתחיל כאן",
   "booking": {
-    "title": "קביעת תור",
+    "title": "בקשת הערכת מחיר להובלה",
+    "steps": {
+      "personalDetails": "פרטים אישיים",
+      "apartmentDate": "סוג דירה ותאריך",
+      "addresses": "כתובות המעבר",
+      "itemList": "רשימת פריטים",
+      "summary": "סיכום"
+    },
+    "apartmentTypes": {
+      "apartment": "דירה",
+      "privateHouse": "בית פרטי",
+      "gardenApartment": "דירת גן",
+      "penthouse": "דירת גג",
+      "other": "אחר"
+    },
     "name": "שם מלא",
-    "email": "אימייל",
-    "submit": "קבע תור",
-    "success": "הזמנתך התקבלה!"
+    "phone": "מספר טלפון",
+    "email": "כתובת אימייל",
+    "apartmentType": "סוג דירה",
+    "rooms": "מספר חדרים",
+    "moveDate": "תאריך מעבר מועדף",
+    "currentAddress": "כתובת נוכחית",
+    "destinationAddress": "כתובת יעד",
+    "fullAddress": "כתובת מלאה",
+    "floor": "קומה",
+    "hasElevator": "יש מעלית",
+    "needsLift": "נדרש מנוף",
+    "itemListPlaceholder": "כאן ניתן לממש את רשימת הפריטים להובלה (שדה דינמי עם הוספה/מחיקה).",
+    "summary": "סיכום",
+    "estimatedPrice": "מחיר משוער",
+    "summaryNote": "(ניתן להוסיף אפשרות להערות נוספות וכפתור שליחה)",
+    "backButton": "קודם",
+    "nextButton": "הבא",
+    "submitButton": "שלח",
+    "success": "הטופס נשלח בהצלחה!",
+    "validation": {
+      "fullNameRequired": "נא למלא שם מלא",
+      "phoneRequired": "נא למלא מספר טלפון",
+      "invalidPhone": "מספר טלפון לא תקין (05XXXXXXXX)",
+      "invalidEmail": "כתובת אימייל לא תקינה",
+      "apartmentTypeRequired": "בחר סוג דירה",
+      "roomsRequired": "בחר מספר חדרים",
+      "moveDateRequired": "בחר תאריך מעבר",
+      "fromAddressRequired": "מלא כתובת נוכחית",
+      "toAddressRequired": "מלא כתובת יעד"
+    }
   }
 }
